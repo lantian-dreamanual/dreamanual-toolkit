@@ -189,9 +189,9 @@ msgstr "参数无效"
 
 #. translators: %s: error context (e.g. "SMTP", "Baidu push")
 #: includes/class-crypto.php:71
-#, fuzzy, php-format
+#, php-format
 msgid "%s: request timed out, please retry later."
-msgstr "AI 请求超时，请稍后重试。"
+msgstr "%s：请求超时，请稍后重试。"
 
 #: includes/class-crypto.php:72
 msgid "Request timed out, please retry later."
@@ -224,11 +224,11 @@ msgid "%s failed, please check network connection or retry later."
 msgstr "%s 失败，请检查网络连接或稍后重试。"
 
 #: modules/ai-optimizer/admin/batch-page.php:14
-#, fuzzy
 msgid ""
 "Select posts to auto-generate tags, slug, and excerpt. Please configure API "
 "Key in settings first."
-msgstr "请先在设置中配置 API Key。"
+msgstr ""
+"选择文章以自动生成标签、别名和摘要。请先在设置中配置 API Key。"
 
 #: modules/ai-optimizer/admin/batch-page.php:30
 msgid "Pending Changes"
@@ -449,11 +449,11 @@ msgid "AI Optimizer"
 msgstr "AI 优化"
 
 #: modules/ai-optimizer/ai-optimizer.php:40
-#, fuzzy
 msgid ""
 "AI auto-generates tags, slugs, and excerpts. Supports DeepSeek / Kimi / "
 "OpenAI / Claude."
-msgstr "不支持的 AI 提供商，请选择 DeepSeek / Kimi / OpenAI / Claude。"
+msgstr ""
+"AI 自动生成标签、别名和摘要。支持 DeepSeek / Kimi / OpenAI / Claude。"
 
 #: modules/ai-optimizer/ai-optimizer.php:129
 #: modules/ai-optimizer/admin/batch-page.php:12
@@ -736,11 +736,11 @@ msgid "Failed to load tag list, please retry."
 msgstr "加载标签列表失败，请重试。"
 
 #: modules/ai-optimizer/ai-optimizer.php:615
-#, fuzzy
 msgid ""
 "AI processing failed, please retry later. If the issue persists, check AI "
 "Optimizer settings."
-msgstr "API Key 无效或已过期，请检查 AI 优化设置。"
+msgstr ""
+"AI 处理失败，请稍后重试。如果问题持续存在，请检查 AI 优化设置。"
 
 #: modules/ai-optimizer/ai-optimizer.php:642
 msgid ""
@@ -1071,11 +1071,11 @@ msgid "Request failed, please retry later."
 msgstr "请求失败，请稍后重试。"
 
 #: modules/role-manager/role-manager.php:149
-#, fuzzy
 msgid ""
 "Failed to load role list, possibly due to network or permission issues. "
 "Please refresh and retry."
-msgstr "加载设置失败，请刷新页面重试。"
+msgstr ""
+"加载角色列表失败，可能是网络或权限问题。请刷新页面重试。"
 
 #: modules/role-manager/role-manager.php:150
 msgid "Network error, please check connection and retry."
@@ -1250,11 +1250,11 @@ msgid "Search Push"
 msgstr "搜索推送"
 
 #: modules/search-push/search-push.php:37
-#, fuzzy
 msgid ""
 "Auto-push links to Baidu and Bing on post publish/update, improving search "
 "engine indexing efficiency."
-msgstr "文章发布时自动推送链接到百度普通收录"
+msgstr ""
+"文章发布或更新时自动推送链接到百度和必应，提升搜索引擎收录效率。"
 
 #: modules/search-push/search-push.php:176
 #: modules/search-push/search-push.php:285
@@ -1556,11 +1556,11 @@ msgid "Site Enhancement"
 msgstr "站点增强"
 
 #: modules/site-enhance/site-enhance.php:40
-#, fuzzy
 msgid ""
 "Back-to-top button, maintenance mode, featured image management, comment "
 "avatar, SMTP mail — each with independent toggle."
-msgstr "回到顶部按钮、维护模式、特色图片管理，每个功能独立开关。"
+msgstr ""
+"回到顶部按钮、维护模式、特色图片管理、评论头像、SMTP 邮件，每个功能独立开关。"
 
 #: modules/site-enhance/site-enhance.php:268
 #: modules/site-enhance/site-enhance.php:405
@@ -1690,11 +1690,11 @@ msgid ""
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:886
-#, fuzzy
 msgid ""
 "Sender address rejected, please verify the from email matches the SMTP "
 "account."
-msgstr "收件人地址被拒绝，请检查收件邮箱是否正确。"
+msgstr ""
+"发件人地址被拒绝，请检查发件邮箱是否与 SMTP 账户一致。"
 
 #: modules/site-enhance/site-enhance.php:894
 msgid "Recipient address rejected, please verify the recipient email."
@@ -1734,12 +1734,11 @@ msgid "Site Optimization"
 msgstr "站点优化"
 
 #: modules/site-optimize/site-optimize.php:37
-#, fuzzy
 msgid ""
 "WordPress feature slimming, Chinese typography, admin ad blocker — each with "
 "independent toggle."
 msgstr ""
-"WordPress 功能精简：屏蔽 Emoji、关闭修订、精简头部代码等，每项独立开关。"
+"WordPress 功能精简、中文排版、后台广告拦截 — 各功能独立开关。"
 
 #: modules/site-optimize/site-optimize.php:191
 msgid "General"
