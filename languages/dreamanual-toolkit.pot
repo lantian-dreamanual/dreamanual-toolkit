@@ -2,40 +2,43 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dreamanual Toolkit 1.4.0\n"
+"Project-Id-Version: Dreamanual Toolkit 1.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dreamanual-toolkit\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-25T01:53:09+00:00\n"
+"POT-Creation-Date: 2026-09-09T00:00:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: dreamanual-toolkit\n"
 
 #. Plugin Name of the plugin
-#: dreamanual-toolkit.php
+#: dreamanual-toolkit.php:0
 msgid "Dreamanual Toolkit"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: dreamanual-toolkit.php
+#: dreamanual-toolkit.php:0
 msgid "https://github.com/ShitFool/dreamanual-toolkit"
 msgstr ""
 
 #. Description of the plugin
-#: dreamanual-toolkit.php
-msgid "Modular WordPress toolbox consolidating AI optimization, content visibility, role management, site enhancement, and more into independent modules."
+#: dreamanual-toolkit.php:0
+msgid ""
+"Modular WordPress toolbox consolidating AI optimization, content"
+" visibility, role management, site enhancement, and more into"
+" independent modules."
 msgstr ""
 
 #. Author of the plugin
-#: dreamanual-toolkit.php
+#: dreamanual-toolkit.php:0
 msgid "Dreamanual"
 msgstr ""
 
 #. Author URI of the plugin
-#: dreamanual-toolkit.php
+#: dreamanual-toolkit.php:0
 msgid "https://dreamanual.com"
 msgstr ""
 
@@ -44,7 +47,7 @@ msgid "No available modules found."
 msgstr ""
 
 #: includes/admin-modules-page.php:45
-#: includes/class-core.php:284
+#: includes/class-core.php:298
 msgid "Enabled"
 msgstr ""
 
@@ -53,7 +56,7 @@ msgid "Inactive"
 msgstr ""
 
 #: includes/admin-modules-page.php:51
-#: includes/class-core.php:347
+#: includes/class-core.php:361
 msgid "Settings"
 msgstr ""
 
@@ -61,143 +64,180 @@ msgstr ""
 msgid "Unsupported AI provider."
 msgstr ""
 
-#: includes/class-ai-client.php:266
-#: includes/class-ai-client.php:314
+#: includes/class-ai-client.php:256
+#: includes/class-ai-client.php:304
 msgid "Invalid API response format."
 msgstr ""
 
-#: includes/class-ai-client.php:340
-msgid "AI response format abnormal, cannot parse. Please retry or switch AI model."
+#: includes/class-ai-client.php:330
+msgid ""
+"AI response format abnormal, cannot parse. Please retry or switch AI"
+" model."
 msgstr ""
 
-#: includes/class-ai-client.php:345
+#: includes/class-ai-client.php:335
 msgid "No valid fields in AI response."
 msgstr ""
 
-#: includes/class-ai-client.php:370
+#: includes/class-ai-client.php:360
 msgid "API Key invalid or expired, please check AI Optimizer settings."
 msgstr ""
 
-#: includes/class-ai-client.php:374
-msgid "AI API quota insufficient, balance too low, or rate limited. Please check your account or retry later."
+#: includes/class-ai-client.php:364
+msgid ""
+"AI API quota insufficient, balance too low, or rate limited. Please"
+" check your account or retry later."
 msgstr ""
 
-#: includes/class-ai-client.php:378
-msgid "Content blocked by AI provider's safety policy, please modify content or switch provider."
+#: includes/class-ai-client.php:368
+msgid ""
+"Content blocked by AI provider's safety policy, please modify content"
+" or switch provider."
 msgstr ""
 
-#: includes/class-ai-client.php:382
+#: includes/class-ai-client.php:372
 msgid "AI service temporarily unavailable, please retry later."
 msgstr ""
 
-#: includes/class-ai-client.php:386
-msgid "AI request parameters invalid, please check model name and request settings."
+#: includes/class-ai-client.php:376
+msgid ""
+"AI request parameters invalid, please check model name and request"
+" settings."
 msgstr ""
 
 #. translators: %d: HTTP status code
-#: includes/class-ai-client.php:390
+#: includes/class-ai-client.php:380
 #, php-format
 msgid "AI request failed (HTTP %1$d), please retry later."
 msgstr ""
 
-#: includes/class-ai-client.php:402
+#: includes/class-ai-client.php:393
 msgid "AI request timed out, please retry later."
 msgstr ""
 
-#: includes/class-ai-client.php:405
+#: includes/class-ai-client.php:396
 msgid "Cannot connect to AI service, please check network."
 msgstr ""
 
-#: includes/class-ai-client.php:407
+#: includes/class-ai-client.php:398
 #: modules/ai-optimizer/ai-optimizer.php:268
 #: modules/ai-optimizer/ai-optimizer.php:323
 msgid "Network error, please check connection."
 msgstr ""
 
-#: includes/class-ai-client.php:410
+#: includes/class-ai-client.php:401
+#: includes/class-crypto.php:95
 msgid "Request failed, please check network connection or retry later."
 msgstr ""
 
-#: includes/class-core.php:97
-#: includes/class-core.php:126
+#: includes/class-core.php:100
+#: includes/class-core.php:132
 msgid "Unknown module"
 msgstr ""
 
-#: includes/class-core.php:212
-#: includes/class-core.php:213
+#: includes/class-core.php:226
+#: includes/class-core.php:227
 msgid "DM Toolkit"
 msgstr ""
 
-#: includes/class-core.php:224
-#: includes/class-core.php:225
+#: includes/class-core.php:238
+#: includes/class-core.php:239
 msgid "Modules"
 msgstr ""
 
-#: includes/class-core.php:239
+#: includes/class-core.php:253
+#: modules/site-enhance/site-enhance.php:222
+#: modules/search-push/search-push.php:143
+#: modules/role-manager/role-manager.php:104
 #: modules/ai-optimizer/ai-optimizer.php:152
 #: modules/ai-optimizer/ai-optimizer.php:162
 #: modules/content-visibility/content-visibility.php:402
-#: modules/role-manager/role-manager.php:104
-#: modules/search-push/search-push.php:143
-#: modules/site-enhance/site-enhance.php:222
-#: modules/site-optimize/site-optimize.php:479
+#: modules/site-optimize/site-optimize.php:477
 msgid "You do not have permission to access this page."
 msgstr ""
 
-#: includes/class-core.php:282
+#: includes/class-core.php:296
 msgid "Enabling…"
 msgstr ""
 
-#: includes/class-core.php:283
+#: includes/class-core.php:297
 msgid "Disabling…"
 msgstr ""
 
-#: includes/class-core.php:285
+#: includes/class-core.php:299
 msgid "Disabled"
 msgstr ""
 
-#: includes/class-core.php:286
+#: includes/class-core.php:300
 msgid "Operation failed, please retry"
 msgstr ""
 
-#: includes/class-core.php:311
-#: modules/content-visibility/content-visibility.php:461
-#: modules/content-visibility/content-visibility.php:514
-#: modules/role-manager/role-manager.php:172
-#: modules/role-manager/role-manager.php:198
-#: modules/role-manager/role-manager.php:221
-#: modules/role-manager/role-manager.php:250
-#: modules/role-manager/role-manager.php:285
-#: modules/role-manager/role-manager.php:310
-#: modules/role-manager/role-manager.php:361
+#: includes/class-core.php:325
+#: modules/site-enhance/site-enhance.php:291
+#: modules/site-enhance/site-enhance.php:414
+#: modules/site-enhance/site-enhance.php:808
 #: modules/search-push/search-push.php:191
 #: modules/search-push/search-push.php:240
 #: modules/search-push/search-push.php:258
-#: modules/site-enhance/site-enhance.php:291
-#: modules/site-enhance/site-enhance.php:414
-#: modules/site-enhance/site-enhance.php:807
-#: modules/site-optimize/site-optimize.php:527
-#: modules/site-optimize/site-optimize.php:566
+#: modules/role-manager/role-manager.php:172
+#: modules/role-manager/role-manager.php:202
+#: modules/role-manager/role-manager.php:225
+#: modules/role-manager/role-manager.php:254
+#: modules/role-manager/role-manager.php:289
+#: modules/role-manager/role-manager.php:314
+#: modules/role-manager/role-manager.php:374
+#: modules/content-visibility/content-visibility.php:461
+#: modules/content-visibility/content-visibility.php:514
+#: modules/site-optimize/site-optimize.php:525
+#: modules/site-optimize/site-optimize.php:564
 msgid "Insufficient permissions"
 msgstr ""
 
-#: includes/class-core.php:318
-#: modules/role-manager/role-manager.php:368
+#: includes/class-core.php:332
+#: modules/role-manager/role-manager.php:381
 msgid "Invalid parameter"
 msgstr ""
 
-#: modules/ai-optimizer/admin/batch-page.php:12
-#: modules/ai-optimizer/ai-optimizer.php:129
-msgid "AI Optimizer — Batch Process"
+#. translators: %s: error context (e.g. "SMTP", "Baidu push")
+#: includes/class-crypto.php:71
+#, php-format
+msgid "%s: request timed out, please retry later."
+msgstr ""
+
+#: includes/class-crypto.php:72
+msgid "Request timed out, please retry later."
+msgstr ""
+
+#. translators: %s: error context
+#: includes/class-crypto.php:82
+#, php-format
+msgid "%s: cannot connect to server, please check network connection."
+msgstr ""
+
+#: includes/class-crypto.php:83
+msgid "Cannot connect to server, please check network connection."
+msgstr ""
+
+#. translators: %s: error context
+#: includes/class-crypto.php:88
+#, php-format
+msgid "%s: SSL certificate verification failed."
+msgstr ""
+
+#: includes/class-crypto.php:89
+msgid "SSL certificate verification failed."
+msgstr ""
+
+#. translators: %s: error context
+#: includes/class-crypto.php:94
+#, php-format
+msgid "%s failed, please check network connection or retry later."
 msgstr ""
 
 #: modules/ai-optimizer/admin/batch-page.php:14
-msgid "Select posts to auto-generate tags, slug, and excerpt. Please configure API Key in settings first."
-msgstr ""
-
-#: modules/ai-optimizer/admin/batch-page.php:24
-#: modules/ai-optimizer/ai-optimizer.php:286
-msgid "Processing..."
+msgid ""
+"Select posts to auto-generate tags, slug, and excerpt. Please"
+" configure API Key in settings first."
 msgstr ""
 
 #: modules/ai-optimizer/admin/batch-page.php:30
@@ -239,12 +279,6 @@ msgstr ""
 msgid "New Excerpt"
 msgstr ""
 
-#: modules/ai-optimizer/admin/batch-page.php:45
-#: modules/ai-optimizer/admin/batch-page.php:91
-#: modules/role-manager/admin/roles-page.php:33
-msgid "Actions"
-msgstr ""
-
 #: modules/ai-optimizer/admin/batch-page.php:56
 msgid "Post List"
 msgstr ""
@@ -265,12 +299,6 @@ msgstr ""
 #: modules/ai-optimizer/admin/batch-page.php:71
 #: modules/ai-optimizer/admin/meta-box.php:27
 msgid "Slug"
-msgstr ""
-
-#: modules/ai-optimizer/admin/batch-page.php:72
-#: modules/ai-optimizer/admin/meta-box.php:32
-#: modules/site-enhance/site-enhance.php:713
-msgid "Excerpt"
 msgstr ""
 
 #: modules/ai-optimizer/admin/batch-page.php:74
@@ -300,26 +328,15 @@ msgid "AI Excerpt"
 msgstr ""
 
 #: modules/ai-optimizer/admin/meta-box.php:12
-msgid "AI automatically generates optimization suggestions based on post title and content."
-msgstr ""
-
-#: modules/ai-optimizer/admin/meta-box.php:37
-#: modules/ai-optimizer/ai-optimizer.php:336
-msgid "Apply Changes"
-msgstr ""
-
-#: modules/ai-optimizer/admin/meta-box.php:38
-#: modules/ai-optimizer/ai-optimizer.php:284
-msgid "Regenerate"
-msgstr ""
-
-#: modules/ai-optimizer/admin/settings-page.php:12
-#: modules/ai-optimizer/ai-optimizer.php:139
-msgid "AI Optimizer — Settings"
+msgid ""
+"AI automatically generates optimization suggestions based on post"
+" title and content."
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:14
-msgid "Configure AI provider, model, and generation options. After saving, use the batch process page or post editor."
+msgid ""
+"Configure AI provider, model, and generation options. After saving,"
+" use the batch process page or post editor."
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:20
@@ -347,7 +364,9 @@ msgid "Claude (Anthropic)"
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:32
-msgid "DeepSeek recommended — cost-effective with lenient content review. Switch if blocked."
+msgid ""
+"DeepSeek recommended — cost-effective with lenient content review."
+" Switch if blocked."
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:37
@@ -370,11 +389,6 @@ msgstr ""
 msgid "Generation Options"
 msgstr ""
 
-#: modules/ai-optimizer/admin/settings-page.php:55
-#: modules/ai-optimizer/ai-optimizer.php:327
-msgid "(click to expand)"
-msgstr ""
-
 #: modules/ai-optimizer/admin/settings-page.php:60
 msgid "Default Toggles"
 msgstr ""
@@ -392,7 +406,9 @@ msgid "Optimize Excerpt"
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:71
-msgid "Select items for AI optimization. Recommended to enable only one at a time to reduce the risk of being blocked."
+msgid ""
+"Select items for AI optimization. Recommended to enable only one at a"
+" time to reduce the risk of being blocked."
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:75
@@ -413,7 +429,9 @@ msgid "chars"
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:86
-msgid "Control excerpt length. Default 100, range 50-500. If custom prompt is set, it takes precedence."
+msgid ""
+"Control excerpt length. Default 100, range 50-500. If custom prompt"
+" is set, it takes precedence."
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:90
@@ -421,7 +439,9 @@ msgid "Excerpt Prompt"
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:94
-msgid "Custom excerpt generation prompt. Leave empty to use default (shown as placeholder text). Supported placeholders:"
+msgid ""
+"Custom excerpt generation prompt. Leave empty to use default (shown"
+" as placeholder text). Supported placeholders:"
 msgstr ""
 
 #: modules/ai-optimizer/admin/settings-page.php:96
@@ -432,13 +452,6 @@ msgstr ""
 msgid "Existing Tags"
 msgstr ""
 
-#: modules/ai-optimizer/admin/settings-page.php:107
-#: modules/search-push/admin/settings-page.php:111
-#: modules/site-enhance/admin/settings-page.php:354
-#: modules/site-optimize/admin/settings-page.php:75
-msgid "Save Settings"
-msgstr ""
-
 #: modules/ai-optimizer/ai-optimizer.php:33
 #: modules/ai-optimizer/ai-optimizer.php:130
 #: modules/ai-optimizer/ai-optimizer.php:175
@@ -446,16 +459,23 @@ msgid "AI Optimizer"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:40
-msgid "AI auto-generates tags, slugs, and excerpts. Supports DeepSeek / Kimi / OpenAI / Claude."
+msgid ""
+"AI auto-generates tags, slugs, and excerpts. Supports DeepSeek / Kimi"
+" / OpenAI / Claude."
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:129
+#: modules/ai-optimizer/admin/batch-page.php:12
+msgid "AI Optimizer — Batch Process"
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:139
+#: modules/ai-optimizer/admin/settings-page.php:12
+msgid "AI Optimizer — Settings"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:140
 msgid "AI Settings"
-msgstr ""
-
-#: modules/ai-optimizer/ai-optimizer.php:267
-#: modules/search-push/search-push.php:378
-msgid "Unknown error"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:275
@@ -495,8 +515,18 @@ msgstr ""
 msgid "Generate"
 msgstr ""
 
+#: modules/ai-optimizer/ai-optimizer.php:284
+#: modules/ai-optimizer/admin/meta-box.php:38
+msgid "Regenerate"
+msgstr ""
+
 #: modules/ai-optimizer/ai-optimizer.php:285
 msgid "Apply"
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:286
+#: modules/ai-optimizer/admin/batch-page.php:24
+msgid "Processing..."
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:287
@@ -552,7 +582,9 @@ msgid " posts?"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:300
-msgid "Note: Changing the Slug will cause old URLs to return 404. Ensure proper redirects are in place."
+msgid ""
+"Note: Changing the Slug will cause old URLs to return 404. Ensure"
+" proper redirects are in place."
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:301
@@ -622,23 +654,17 @@ msgstr ""
 msgid "Some posts failed to apply, please check details above."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:320
-#: modules/ai-optimizer/ai-optimizer.php:665
-#: modules/search-push/search-push.php:173
-#: modules/search-push/search-push.php:234
-#: modules/site-enhance/site-enhance.php:268
-#: modules/site-enhance/site-enhance.php:405
-#: modules/site-optimize/site-optimize.php:512
-#: modules/site-optimize/site-optimize.php:557
-msgid "Settings saved."
-msgstr ""
-
 #: modules/ai-optimizer/ai-optimizer.php:321
 msgid "Save failed: "
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:326
 msgid "(click to collapse)"
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:327
+#: modules/ai-optimizer/admin/settings-page.php:55
+msgid "(click to expand)"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:331
@@ -661,76 +687,71 @@ msgstr ""
 msgid "Applied! Page will refresh."
 msgstr ""
 
+#: modules/ai-optimizer/ai-optimizer.php:336
+#: modules/ai-optimizer/admin/meta-box.php:37
+msgid "Apply Changes"
+msgstr ""
+
 #: modules/ai-optimizer/ai-optimizer.php:337
 msgid "Apply failed: "
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:357
-#: modules/ai-optimizer/ai-optimizer.php:405
-#: modules/ai-optimizer/ai-optimizer.php:460
-#: modules/ai-optimizer/ai-optimizer.php:513
-#: modules/ai-optimizer/ai-optimizer.php:569
-#: modules/ai-optimizer/ai-optimizer.php:613
-#: modules/ai-optimizer/ai-optimizer.php:675
+#: modules/ai-optimizer/ai-optimizer.php:408
+#: modules/ai-optimizer/ai-optimizer.php:463
+#: modules/ai-optimizer/ai-optimizer.php:521
+#: modules/ai-optimizer/ai-optimizer.php:582
+#: modules/ai-optimizer/ai-optimizer.php:626
+#: modules/ai-optimizer/ai-optimizer.php:688
 msgid "Insufficient permissions."
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:425
-#: modules/ai-optimizer/ai-optimizer.php:465
-#: modules/ai-optimizer/ai-optimizer.php:522
+#: modules/ai-optimizer/ai-optimizer.php:468
+#: modules/ai-optimizer/ai-optimizer.php:530
 msgid "Invalid post ID."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:428
-msgid "Please enter API Key."
-msgstr ""
-
-#: modules/ai-optimizer/ai-optimizer.php:433
-#: modules/ai-optimizer/ai-optimizer.php:475
-#: modules/ai-optimizer/ai-optimizer.php:527
-msgid "Post not found."
-msgstr ""
-
-#: modules/ai-optimizer/ai-optimizer.php:470
+#: modules/ai-optimizer/ai-optimizer.php:431
+#: modules/ai-optimizer/ai-optimizer.php:473
 msgid "Please configure API Key in \"AI Optimizer → Settings\" first."
 msgstr ""
 
+#: modules/ai-optimizer/ai-optimizer.php:436
+#: modules/ai-optimizer/ai-optimizer.php:478
 #: modules/ai-optimizer/ai-optimizer.php:535
+msgid "Post not found."
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:483
+#: modules/ai-optimizer/ai-optimizer.php:540
+msgid "You do not have permission to edit this post."
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:548
 msgid "Tag save failed, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:551
+#: modules/ai-optimizer/ai-optimizer.php:564
 msgid "Post update failed, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:556
+#: modules/ai-optimizer/ai-optimizer.php:569
 msgid "Changes applied."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:579
+#: modules/ai-optimizer/ai-optimizer.php:592
 msgid "Failed to load tag list, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:602
-msgid "AI processing failed, please retry later. If the issue persists, check AI Optimizer settings."
+#: modules/ai-optimizer/ai-optimizer.php:615
+msgid ""
+"AI processing failed, please retry later. If the issue persists,"
+" check AI Optimizer settings."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:629
+#: modules/ai-optimizer/ai-optimizer.php:642
 msgid "Unsupported AI provider, please choose DeepSeek / Kimi / OpenAI / Claude."
-msgstr ""
-
-#: modules/ai-optimizer/ai-optimizer.php:654
-#: modules/content-visibility/content-visibility.php:443
-#: modules/content-visibility/content-visibility.php:494
-#: modules/content-visibility/content-visibility.php:533
-#: modules/content-visibility/content-visibility.php:538
-#: modules/search-push/search-push.php:174
-#: modules/search-push/search-push.php:231
-#: modules/site-enhance/site-enhance.php:269
-#: modules/site-enhance/site-enhance.php:402
-#: modules/site-optimize/site-optimize.php:513
-#: modules/site-optimize/site-optimize.php:554
-msgid "Save failed, please retry."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:16
@@ -753,15 +774,10 @@ msgstr ""
 msgid "Sitemap"
 msgstr ""
 
-#: modules/content-visibility/admin/settings-page.php:25
-#: modules/content-visibility/content-visibility.php:44
-#: modules/content-visibility/content-visibility.php:389
-#: modules/content-visibility/content-visibility.php:390
-msgid "Content Visibility"
-msgstr ""
-
 #: modules/content-visibility/admin/settings-page.php:27
-msgid "Configure display channels and visible roles per category. Uncategorized posts display normally on all channels."
+msgid ""
+"Configure display channels and visible roles per category."
+" Uncategorized posts display normally on all channels."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:31
@@ -769,11 +785,16 @@ msgid "Instructions"
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:33
-msgid "Channel column checked = category content shown on that channel; unchecked = hidden. All checked by default (show everywhere)."
+msgid ""
+"Channel column checked = category content shown on that channel;"
+" unchecked = hidden. All checked by default (show everywhere)."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:34
-msgid "\"Visible After Hiding\" determines which logged-in roles can still see content when a channel is hidden. If none selected, only administrators can see it."
+msgid ""
+"\"Visible After Hiding\" determines which logged-in roles can still"
+" see content when a channel is hidden. If none selected, only"
+" administrators can see it."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:35
@@ -781,16 +802,22 @@ msgid "All channels checked (default) = no processing for this category."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:37
+msgid ""
+"\"Diary\" category: uncheck all channels + set visible role to"
+" \"Administrator\" = hidden site-wide, only administrators can see"
+" (direct links also return 404)."
+msgstr ""
+
+#: modules/content-visibility/admin/settings-page.php:37
 #: modules/content-visibility/admin/settings-page.php:38
 msgid "Examples:"
 msgstr ""
 
-#: modules/content-visibility/admin/settings-page.php:37
-msgid "\"Diary\" category: uncheck all channels + set visible role to \"Administrator\" = hidden site-wide, only administrators can see (direct links also return 404)."
-msgstr ""
-
 #: modules/content-visibility/admin/settings-page.php:38
-msgid "\"Mini-Program Picks\" category: check only REST API, uncheck others + set visible role to \"Administrator\" = hidden on frontend and direct link returns 404, but mini-program can still read via API."
+msgid ""
+"\"Mini-Program Picks\" category: check only REST API, uncheck others"
+" + set visible role to \"Administrator\" = hidden on frontend and"
+" direct link returns 404, but mini-program can still read via API."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:46
@@ -810,7 +837,9 @@ msgid "Visible After Hiding"
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:64
-msgid "No categories yet. Please create categories in \"Posts → Categories\" before configuring visibility rules."
+msgid ""
+"No categories yet. Please create categories in \"Posts → Categories\""
+" before configuring visibility rules."
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:106
@@ -818,11 +847,23 @@ msgid "Post-Level Hide"
 msgstr ""
 
 #: modules/content-visibility/admin/settings-page.php:107
-msgid "On the post list page, quickly hide individual posts via the \"Visibility\" column or row actions. Hidden posts won't appear in lists, and direct links return 404."
+msgid ""
+"On the post list page, quickly hide individual posts via the"
+" \"Visibility\" column or row actions. Hidden posts won't appear in"
+" lists, and direct links return 404."
+msgstr ""
+
+#: modules/content-visibility/content-visibility.php:44
+#: modules/content-visibility/content-visibility.php:389
+#: modules/content-visibility/content-visibility.php:390
+#: modules/content-visibility/admin/settings-page.php:25
+msgid "Content Visibility"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:51
-msgid "Control content visibility by category/post, with channel- and role-level configuration."
+msgid ""
+"Control content visibility by category/post, with channel- and"
+" role-level configuration."
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:294
@@ -834,18 +875,14 @@ msgstr ""
 msgid "Rules saved."
 msgstr ""
 
-#: modules/content-visibility/content-visibility.php:444
-#: modules/search-push/search-push.php:175
-#: modules/site-enhance/site-enhance.php:270
-msgid "Operation failed, please retry later."
-msgstr ""
-
 #: modules/content-visibility/content-visibility.php:445
 msgid "Failed to toggle visibility, please retry."
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:446
-msgid "Hide this post? Hidden posts won't appear in lists, and direct links return 404."
+msgid ""
+"Hide this post? Hidden posts won't appear in lists, and direct links"
+" return 404."
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:447
@@ -853,7 +890,11 @@ msgid "Show this post?"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:448
-msgid "Warning: Some categories have hidden channels without selected visible roles. These categories will be hidden from all non-admin users (administrators may also be unable to view them on the frontend). Confirm save?"
+msgid ""
+"Warning: Some categories have hidden channels without selected"
+" visible roles. These categories will be hidden from all non-admin"
+" users (administrators may also be unable to view them on the"
+" frontend). Confirm save?"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:468
@@ -882,33 +923,22 @@ msgid "Visible"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:607
-msgid "Show"
+#: modules/content-visibility/content-visibility.php:634
+msgid "Hide"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:607
-#: modules/content-visibility/content-visibility.php:634
-msgid "Hide"
+msgid "Show"
 msgstr ""
 
 #: modules/content-visibility/content-visibility.php:621
 msgid "Visibility"
 msgstr ""
 
-#: modules/role-manager/admin/roles-page.php:12
-#: modules/role-manager/role-manager.php:34
-#: modules/role-manager/role-manager.php:91
-#: modules/role-manager/role-manager.php:92
-msgid "Role Manager"
-msgstr ""
-
 #: modules/role-manager/admin/roles-page.php:14
-msgid "Manage WordPress user roles and capabilities. Click a role to view details and edit capabilities."
-msgstr ""
-
-#: modules/role-manager/admin/roles-page.php:21
-#: modules/role-manager/admin/roles-page.php:45
-#: modules/role-manager/role-manager.php:158
-msgid "Add Role"
+msgid ""
+"Manage WordPress user roles and capabilities. Click a role to view"
+" details and edit capabilities."
 msgstr ""
 
 #: modules/role-manager/admin/roles-page.php:29
@@ -925,6 +955,12 @@ msgstr ""
 
 #: modules/role-manager/admin/roles-page.php:32
 msgid "Capabilities"
+msgstr ""
+
+#: modules/role-manager/admin/roles-page.php:33
+#: modules/ai-optimizer/admin/batch-page.php:45
+#: modules/ai-optimizer/admin/batch-page.php:91
+msgid "Actions"
 msgstr ""
 
 #: modules/role-manager/admin/roles-page.php:37
@@ -975,8 +1011,17 @@ msgstr ""
 msgid "Save Capabilities"
 msgstr ""
 
+#: modules/role-manager/role-manager.php:34
+#: modules/role-manager/role-manager.php:91
+#: modules/role-manager/role-manager.php:92
+#: modules/role-manager/admin/roles-page.php:12
+msgid "Role Manager"
+msgstr ""
+
 #: modules/role-manager/role-manager.php:41
-msgid "Visually manage WordPress user roles and capabilities, with role duplication and bulk editing support."
+msgid ""
+"Visually manage WordPress user roles and capabilities, with role"
+" duplication and bulk editing support."
 msgstr ""
 
 #. translators: %s: Role name
@@ -988,7 +1033,10 @@ msgstr ""
 #. translators: %d: Number of users with this role
 #: modules/role-manager/role-manager.php:140
 #, php-format
-msgid "Warning: This role has %d users. After deletion, these users will lose the role and may be unable to access the admin. Please assign them new roles before deleting."
+msgid ""
+"Warning: This role has %d users. After deletion, these users will"
+" lose the role and may be unable to access the admin. Please assign"
+" them new roles before deleting."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:141
@@ -996,27 +1044,27 @@ msgid "Cannot delete built-in roles."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:142
-#: modules/role-manager/role-manager.php:241
+#: modules/role-manager/role-manager.php:245
 msgid "Role added."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:143
-#: modules/role-manager/role-manager.php:276
+#: modules/role-manager/role-manager.php:280
 msgid "Role duplicated."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:144
-#: modules/role-manager/role-manager.php:301
+#: modules/role-manager/role-manager.php:305
 msgid "Role deleted."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:145
-#: modules/role-manager/role-manager.php:352
+#: modules/role-manager/role-manager.php:365
 msgid "Role capabilities updated."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:146
-#: modules/role-manager/role-manager.php:394
+#: modules/role-manager/role-manager.php:407
 msgid "User role changed."
 msgstr ""
 
@@ -1029,7 +1077,9 @@ msgid "Request failed, please retry later."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:149
-msgid "Failed to load role list, possibly due to network or permission issues. Please refresh and retry."
+msgid ""
+"Failed to load role list, possibly due to network or permission"
+" issues. Please refresh and retry."
 msgstr ""
 
 #: modules/role-manager/role-manager.php:150
@@ -1064,74 +1114,79 @@ msgstr ""
 msgid "Please fill in role name and key"
 msgstr ""
 
+#: modules/role-manager/role-manager.php:158
+#: modules/role-manager/admin/roles-page.php:21
+#: modules/role-manager/admin/roles-page.php:45
+msgid "Add Role"
+msgstr ""
+
 #: modules/role-manager/role-manager.php:159
 msgid "Duplicate Role"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:205
-#: modules/role-manager/role-manager.php:323
+#: modules/role-manager/role-manager.php:209
+#: modules/role-manager/role-manager.php:327
 msgid "Role does not exist"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:228
-#: modules/role-manager/role-manager.php:258
+#: modules/role-manager/role-manager.php:232
+#: modules/role-manager/role-manager.php:262
 msgid "Role name and key cannot be empty"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:232
-#: modules/role-manager/role-manager.php:267
+#: modules/role-manager/role-manager.php:236
+#: modules/role-manager/role-manager.php:271
 msgid "Role key already exists"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:238
+#: modules/role-manager/role-manager.php:242
 msgid "Failed to add role, please retry."
 msgstr ""
 
-#: modules/role-manager/role-manager.php:263
+#: modules/role-manager/role-manager.php:267
 msgid "Source role does not exist"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:273
+#: modules/role-manager/role-manager.php:277
 msgid "Failed to duplicate role, please retry."
 msgstr ""
 
-#: modules/role-manager/role-manager.php:291
+#: modules/role-manager/role-manager.php:295
 msgid "Cannot delete built-in protected role"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:298
+#: modules/role-manager/role-manager.php:302
 msgid "Failed to delete role, please retry."
 msgstr ""
 
-#: modules/role-manager/role-manager.php:318
+#: modules/role-manager/role-manager.php:322
 msgid "Invalid capability data format"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:349
+#: modules/role-manager/role-manager.php:334
+msgid ""
+"Cannot remove \"manage_options\" from a protected role (e.g."
+" administrator)."
+msgstr ""
+
+#: modules/role-manager/role-manager.php:362
 msgid "Failed to update role capabilities, please retry."
 msgstr ""
 
-#: modules/role-manager/role-manager.php:373
+#: modules/role-manager/role-manager.php:386
 msgid "Target role does not exist"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:378
+#: modules/role-manager/role-manager.php:391
 msgid "Cannot modify your own role"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:383
+#: modules/role-manager/role-manager.php:396
 msgid "User does not exist"
 msgstr ""
 
-#: modules/role-manager/role-manager.php:391
+#: modules/role-manager/role-manager.php:404
 msgid "Failed to change user role, please retry."
-msgstr ""
-
-#: modules/search-push/admin/settings-page.php:27
-#: modules/search-push/search-push.php:30
-#: modules/search-push/search-push.php:133
-#: modules/search-push/search-push.php:134
-msgid "Search Push"
 msgstr ""
 
 #: modules/search-push/admin/settings-page.php:37
@@ -1147,7 +1202,9 @@ msgid "Site Domain"
 msgstr ""
 
 #: modules/search-push/admin/settings-page.php:49
-msgid "Site domain verified on Baidu Search Resource Platform. If different from current site domain, fill in manually."
+msgid ""
+"Site domain verified on Baidu Search Resource Platform. If different"
+" from current site domain, fill in manually."
 msgstr ""
 
 #: modules/search-push/admin/settings-page.php:52
@@ -1189,8 +1246,17 @@ msgstr ""
 msgid "Obtain from Bing Webmaster Tools"
 msgstr ""
 
+#: modules/search-push/search-push.php:30
+#: modules/search-push/search-push.php:133
+#: modules/search-push/search-push.php:134
+#: modules/search-push/admin/settings-page.php:27
+msgid "Search Push"
+msgstr ""
+
 #: modules/search-push/search-push.php:37
-msgid "Auto-push links to Baidu and Bing on post publish/update, improving search engine indexing efficiency."
+msgid ""
+"Auto-push links to Baidu and Bing on post publish/update, improving"
+" search engine indexing efficiency."
 msgstr ""
 
 #: modules/search-push/search-push.php:176
@@ -1218,7 +1284,9 @@ msgid "Bing push enabled, please fill in API Key first."
 msgstr ""
 
 #: modules/search-push/search-push.php:181
-msgid "Current settings may not be saved yet. Test will use the saved configuration. Continue?"
+msgid ""
+"Current settings may not be saved yet. Test will use the saved"
+" configuration. Continue?"
 msgstr ""
 
 #: modules/search-push/search-push.php:279
@@ -1229,57 +1297,31 @@ msgstr ""
 msgid "Baidu push token or site domain not configured."
 msgstr ""
 
+#: modules/search-push/search-push.php:379
+#: modules/ai-optimizer/ai-optimizer.php:267
+msgid "Unknown error"
+msgstr ""
+
 #. translators: 1: HTTP status code, 2: error message from the Baidu push API
-#: modules/search-push/search-push.php:380
+#: modules/search-push/search-push.php:381
 #, php-format
 msgid "Baidu push failed (%1$d): %2$s"
 msgstr ""
 
-#: modules/search-push/search-push.php:397
+#: modules/search-push/search-push.php:398
 msgid "Bing API Key not configured."
 msgstr ""
 
 #. translators: %d: error code returned by the Bing Webmaster API
-#: modules/search-push/search-push.php:426
+#: modules/search-push/search-push.php:427
 #, php-format
 msgid "Bing push failed: ErrorCode %1$d"
 msgstr ""
 
 #. translators: %d: HTTP status code
-#: modules/search-push/search-push.php:431
+#: modules/search-push/search-push.php:432
 #, php-format
 msgid "Bing push failed (HTTP %1$d)"
-msgstr ""
-
-#. translators: %s: search engine name (百度/Bing)
-#: modules/search-push/search-push.php:449
-#, php-format
-msgid "%s push: request timed out, please retry later."
-msgstr ""
-
-#. translators: %s: search engine name (百度/Bing)
-#: modules/search-push/search-push.php:456
-#, php-format
-msgid "%s push: cannot connect to server, please check network connection."
-msgstr ""
-
-#. translators: %s: search engine name (百度/Bing)
-#: modules/search-push/search-push.php:460
-#, php-format
-msgid "%s push: SSL certificate verification failed."
-msgstr ""
-
-#. translators: %s: search engine name (Baidu/Bing)
-#: modules/search-push/search-push.php:467
-#, php-format
-msgid "%s push failed, please check network connection or retry later."
-msgstr ""
-
-#: modules/site-enhance/admin/settings-page.php:51
-#: modules/site-enhance/site-enhance.php:33
-#: modules/site-enhance/site-enhance.php:209
-#: modules/site-enhance/site-enhance.php:210
-msgid "Site Enhancement"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:61
@@ -1338,11 +1380,6 @@ msgstr ""
 msgid "Leave empty to use default notice."
 msgstr ""
 
-#: modules/site-enhance/admin/settings-page.php:125
-#: modules/site-enhance/site-enhance.php:527
-msgid "Site is under maintenance, please visit later."
-msgstr ""
-
 #: modules/site-enhance/admin/settings-page.php:135
 msgid "Featured Image Filter"
 msgstr ""
@@ -1352,7 +1389,10 @@ msgid "Add missing/has featured image filter dropdown to post list"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:146
-msgid "When enabled, adds a \"Missing/Has Featured Image\" filter dropdown on the post list page, making it easy to find posts without featured images."
+msgid ""
+"When enabled, adds a \"Missing/Has Featured Image\" filter dropdown"
+" on the post list page, making it easy to find posts without featured"
+" images."
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:156
@@ -1364,7 +1404,10 @@ msgid "Show featured image thumbnail after checkbox in post list"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:167
-msgid "When enabled, adds a featured image thumbnail column after the checkbox in the post list, visually showing each post's featured image status."
+msgid ""
+"When enabled, adds a featured image thumbnail column after the"
+" checkbox in the post list, visually showing each post's featured"
+" image status."
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:177
@@ -1403,7 +1446,10 @@ msgid "Add excerpt edit box in post quick-edit panel"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:219
-msgid "When enabled, adds an excerpt edit box in the quick-edit panel of the post list, allowing excerpt editing without entering the full edit page."
+msgid ""
+"When enabled, adds an excerpt edit box in the quick-edit panel of the"
+" post list, allowing excerpt editing without entering the full edit"
+" page."
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:229
@@ -1475,7 +1521,9 @@ msgid "Comment Avatar"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:307
-msgid "Replace Gravatar with mirror source and custom default avatar for commenters"
+msgid ""
+"Replace Gravatar with mirror source and custom default avatar for"
+" commenters"
 msgstr ""
 
 #: modules/site-enhance/admin/settings-page.php:317
@@ -1494,22 +1542,69 @@ msgstr ""
 msgid "Default Avatar"
 msgstr ""
 
+#: modules/site-enhance/admin/settings-page.php:354
+#: modules/search-push/admin/settings-page.php:111
+#: modules/ai-optimizer/admin/settings-page.php:107
+#: modules/site-optimize/admin/settings-page.php:75
+msgid "Save Settings"
+msgstr ""
+
 #: modules/site-enhance/admin/settings-page.php:355
 #: modules/site-optimize/admin/settings-page.php:76
 msgid "Some settings require page refresh to take effect"
 msgstr ""
 
+#: modules/site-enhance/site-enhance.php:33
+#: modules/site-enhance/site-enhance.php:209
+#: modules/site-enhance/site-enhance.php:210
+#: modules/site-enhance/admin/settings-page.php:51
+msgid "Site Enhancement"
+msgstr ""
+
 #: modules/site-enhance/site-enhance.php:40
-msgid "Back-to-top button, maintenance mode, featured image management, comment avatar, SMTP mail — each with independent toggle."
+msgid ""
+"Back-to-top button, maintenance mode, featured image management,"
+" comment avatar, SMTP mail — each with independent toggle."
+msgstr ""
+
+#: modules/site-enhance/site-enhance.php:268
+#: modules/site-enhance/site-enhance.php:405
+#: modules/search-push/search-push.php:173
+#: modules/search-push/search-push.php:234
+#: modules/ai-optimizer/ai-optimizer.php:320
+#: modules/ai-optimizer/ai-optimizer.php:678
+#: modules/site-optimize/site-optimize.php:510
+#: modules/site-optimize/site-optimize.php:555
+msgid "Settings saved."
+msgstr ""
+
+#: modules/site-enhance/site-enhance.php:269
+#: modules/site-enhance/site-enhance.php:402
+#: modules/search-push/search-push.php:174
+#: modules/search-push/search-push.php:231
+#: modules/ai-optimizer/ai-optimizer.php:667
+#: modules/content-visibility/content-visibility.php:443
+#: modules/content-visibility/content-visibility.php:494
+#: modules/content-visibility/content-visibility.php:533
+#: modules/content-visibility/content-visibility.php:538
+#: modules/site-optimize/site-optimize.php:511
+#: modules/site-optimize/site-optimize.php:552
+msgid "Save failed, please retry."
+msgstr ""
+
+#: modules/site-enhance/site-enhance.php:270
+#: modules/search-push/search-push.php:175
+#: modules/content-visibility/content-visibility.php:444
+msgid "Operation failed, please retry later."
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:271
-#: modules/site-enhance/site-enhance.php:815
+#: modules/site-enhance/site-enhance.php:816
 msgid "Please enter recipient email."
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:272
-#: modules/site-enhance/site-enhance.php:829
+#: modules/site-enhance/site-enhance.php:830
 msgid "Test email sent, please check the inbox."
 msgstr ""
 
@@ -1536,85 +1631,91 @@ msgid "Please enable SMTP mail and save settings before testing."
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:278
-msgid "After enabling maintenance mode, visitors will see the maintenance page and cannot access the site normally. Confirm enabling?"
+msgid ""
+"After enabling maintenance mode, visitors will see the maintenance"
+" page and cannot access the site normally. Confirm enabling?"
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:471
 msgid "Back to Top"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:547
-#: modules/site-enhance/site-enhance.php:551
+#: modules/site-enhance/site-enhance.php:527
+#: modules/site-enhance/admin/settings-page.php:125
+msgid "Site is under maintenance, please visit later."
+msgstr ""
+
+#: modules/site-enhance/site-enhance.php:548
+#: modules/site-enhance/site-enhance.php:552
 msgid "Under Maintenance"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:576
+#: modules/site-enhance/site-enhance.php:577
 msgid "All Featured Images"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:577
+#: modules/site-enhance/site-enhance.php:578
 msgid "Missing Featured Image"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:578
+#: modules/site-enhance/site-enhance.php:579
 msgid "Has Featured Image"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:641
+#: modules/site-enhance/site-enhance.php:642
 msgid "No Featured Image Set"
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:811
-msgid "DM Toolkit SMTP Test"
+#: modules/site-enhance/site-enhance.php:714
+#: modules/ai-optimizer/admin/batch-page.php:72
+#: modules/ai-optimizer/admin/meta-box.php:32
+msgid "Excerpt"
 msgstr ""
 
 #: modules/site-enhance/site-enhance.php:812
+msgid "DM Toolkit SMTP Test"
+msgstr ""
+
+#: modules/site-enhance/site-enhance.php:813
 msgid "This is a test email sent by Dreamanual Toolkit SMTP feature."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:836
+#: modules/site-enhance/site-enhance.php:837
 msgid "Send failed, please verify SMTP host, port, username, and password."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:856
-msgid "Cannot connect to SMTP server, please verify host and port are correct and the server allows connections on that port."
-msgstr ""
-
-#: modules/site-enhance/site-enhance.php:866
+#: modules/site-enhance/site-enhance.php:869
 msgid "Authentication failed, please verify SMTP username and password."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:875
-msgid "Encrypted connection failed, please verify encryption method (SSL/TLS/None) is correct."
+#: modules/site-enhance/site-enhance.php:878
+msgid ""
+"Encrypted connection failed, please verify encryption method"
+" (SSL/TLS/None) is correct."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:883
-msgid "Sender address rejected, please verify the from email matches the SMTP account."
+#: modules/site-enhance/site-enhance.php:886
+msgid ""
+"Sender address rejected, please verify the from email matches the"
+" SMTP account."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:891
+#: modules/site-enhance/site-enhance.php:894
 msgid "Recipient address rejected, please verify the recipient email."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:899
+#: modules/site-enhance/site-enhance.php:902
 msgid "Send frequency limit exceeded, please retry later."
 msgstr ""
 
-#: modules/site-enhance/site-enhance.php:907
+#: modules/site-enhance/site-enhance.php:910
 msgid "Mailbox full or quota exceeded."
 msgstr ""
 
 #. translators: %s: original SMTP error message
-#: modules/site-enhance/site-enhance.php:912
+#: modules/site-enhance/site-enhance.php:915
 #, php-format
 msgid "Send failed, please verify SMTP settings. Original error: %s"
-msgstr ""
-
-#: modules/site-optimize/admin/settings-page.php:22
-#: modules/site-optimize/site-optimize.php:30
-#: modules/site-optimize/site-optimize.php:466
-#: modules/site-optimize/site-optimize.php:467
-msgid "Site Optimization"
 msgstr ""
 
 #: modules/site-optimize/admin/settings-page.php:55
@@ -1629,8 +1730,17 @@ msgstr ""
 msgid ".example-upsell{display:none;}"
 msgstr ""
 
+#: modules/site-optimize/site-optimize.php:30
+#: modules/site-optimize/site-optimize.php:464
+#: modules/site-optimize/site-optimize.php:465
+#: modules/site-optimize/admin/settings-page.php:22
+msgid "Site Optimization"
+msgstr ""
+
 #: modules/site-optimize/site-optimize.php:37
-msgid "WordPress feature slimming, Chinese typography, admin ad blocker — each with independent toggle."
+msgid ""
+"WordPress feature slimming, Chinese typography, admin ad blocker —"
+" each with independent toggle."
 msgstr ""
 
 #: modules/site-optimize/site-optimize.php:191
@@ -1753,6 +1863,6 @@ msgstr ""
 msgid "Hide third-party plugin advertisement banners in admin"
 msgstr ""
 
-#: modules/site-optimize/site-optimize.php:514
+#: modules/site-optimize/site-optimize.php:512
 msgid "Operation failed."
 msgstr ""
