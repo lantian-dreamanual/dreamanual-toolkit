@@ -32,7 +32,7 @@ msgstr "https://github.com/ShitFool/dreamanual-toolkit"
 msgid ""
 "Modular WordPress toolbox consolidating AI optimization, content visibility, "
 "role management, site enhancement, and more into independent modules."
-msgstr ""
+msgstr "模块化 WordPress 工具箱，将 AI 优化、内容可见性、角色管理、站点增强等功能整合为独立模块。"
 
 #. Author of the plugin
 #: dreamanual-toolkit.php:0
@@ -71,7 +71,7 @@ msgstr "API 响应格式无效。"
 #: includes/class-ai-client.php:330
 msgid ""
 "AI response format abnormal, cannot parse. Please retry or switch AI model."
-msgstr ""
+msgstr "AI 响应格式异常，无法解析。请重试或切换 AI 模型。"
 
 #: includes/class-ai-client.php:335
 msgid "No valid fields in AI response."
@@ -85,13 +85,13 @@ msgstr "API Key 无效或已过期，请检查 AI 优化设置。"
 msgid ""
 "AI API quota insufficient, balance too low, or rate limited. Please check "
 "your account or retry later."
-msgstr ""
+msgstr "AI API 配额不足、余额过低或被限流。请检查账户或稍后重试。"
 
 #: includes/class-ai-client.php:368
 msgid ""
 "Content blocked by AI provider's safety policy, please modify content or "
 "switch provider."
-msgstr ""
+msgstr "内容被 AI 服务商的安全策略拦截，请修改内容或切换服务商。"
 
 #: includes/class-ai-client.php:372
 msgid "AI service temporarily unavailable, please retry later."
@@ -100,7 +100,7 @@ msgstr "AI 服务暂时不可用，请稍后重试。"
 #: includes/class-ai-client.php:376
 msgid ""
 "AI request parameters invalid, please check model name and request settings."
-msgstr ""
+msgstr "AI 请求参数无效，请检查模型名称和请求设置。"
 
 #. translators: %d: HTTP status code
 #: includes/class-ai-client.php:380
@@ -321,13 +321,13 @@ msgstr "AI 摘要"
 msgid ""
 "AI automatically generates optimization suggestions based on post title and "
 "content."
-msgstr ""
+msgstr "AI 根据文章标题和内容自动生成优化建议。"
 
 #: modules/ai-optimizer/admin/settings-page.php:14
 msgid ""
 "Configure AI provider, model, and generation options. After saving, use the "
 "batch process page or post editor."
-msgstr ""
+msgstr "配置 AI 服务商、模型和生成选项。保存后，可使用批量处理页面或文章编辑器。"
 
 #: modules/ai-optimizer/admin/settings-page.php:20
 msgid "AI Configuration"
@@ -357,7 +357,7 @@ msgstr "Claude（Anthropic）"
 msgid ""
 "DeepSeek recommended — cost-effective with lenient content review. Switch if "
 "blocked."
-msgstr ""
+msgstr "推荐使用 DeepSeek——性价比高且内容审核较宽松。如被拦截可切换其他服务商。"
 
 #: modules/ai-optimizer/admin/settings-page.php:37
 msgid "AI Model"
@@ -399,7 +399,7 @@ msgstr "优化摘要"
 msgid ""
 "Select items for AI optimization. Recommended to enable only one at a time "
 "to reduce the risk of being blocked."
-msgstr ""
+msgstr "选择 AI 优化项目。建议每次只启用一项，以降低被拦截的风险。"
 
 #: modules/ai-optimizer/admin/settings-page.php:75
 msgid "Tag Count Limit"
@@ -422,7 +422,7 @@ msgstr "字"
 msgid ""
 "Control excerpt length. Default 100, range 50-500. If custom prompt is set, "
 "it takes precedence."
-msgstr ""
+msgstr "控制摘要长度。默认 100，范围 50-500。如设置了自定义提示词，则以提示词为准。"
 
 #: modules/ai-optimizer/admin/settings-page.php:90
 msgid "Excerpt Prompt"
@@ -432,7 +432,7 @@ msgstr "摘要提示词"
 msgid ""
 "Custom excerpt generation prompt. Leave empty to use default (shown as "
 "placeholder text). Supported placeholders:"
-msgstr ""
+msgstr "自定义摘要生成提示词。留空则使用默认值（以占位符文本显示）。支持的占位符："
 
 #: modules/ai-optimizer/admin/settings-page.php:96
 msgid "Content"
@@ -576,7 +576,7 @@ msgstr " 篇文章？"
 msgid ""
 "Note: Changing the Slug will cause old URLs to return 404. Ensure proper "
 "redirects are in place."
-msgstr ""
+msgstr "注意：更改 Slug 后旧 URL 将返回 404。请确保已设置正确的重定向。"
 
 #: modules/ai-optimizer/ai-optimizer.php:301
 msgid "Excerpt changes will overwrite current content."
@@ -771,7 +771,7 @@ msgstr "站点地图"
 msgid ""
 "Configure display channels and visible roles per category. Uncategorized "
 "posts display normally on all channels."
-msgstr ""
+msgstr "按分类配置显示渠道和可见角色。未分类文章在所有渠道正常显示。"
 
 #: modules/content-visibility/admin/settings-page.php:31
 msgid "Instructions"
@@ -781,14 +781,14 @@ msgstr "使用说明"
 msgid ""
 "Channel column checked = category content shown on that channel; unchecked = "
 "hidden. All checked by default (show everywhere)."
-msgstr ""
+msgstr "渠道列勾选 = 该分类内容在对应渠道显示；取消勾选 = 隐藏。默认全部勾选（所有渠道可见）。"
 
 #: modules/content-visibility/admin/settings-page.php:34
 msgid ""
 "\"Visible After Hiding\" determines which logged-in roles can still see "
 "content when a channel is hidden. If none selected, only administrators can "
 "see it."
-msgstr ""
+msgstr "「隐藏后仍可见角色」决定当某个渠道隐藏时，哪些已登录角色仍可查看内容。如不选择，仅管理员可见。"
 
 #: modules/content-visibility/admin/settings-page.php:35
 msgid "All channels checked (default) = no processing for this category."
@@ -799,7 +799,7 @@ msgid ""
 "\"Diary\" category: uncheck all channels + set visible role to "
 "\"Administrator\" = hidden site-wide, only administrators can see (direct "
 "links also return 404)."
-msgstr ""
+msgstr "「日记」分类：取消所有渠道勾选 + 可见角色设为「管理员」= 全站隐藏，仅管理员可见（直接访问链接也返回 404）。"
 
 #: modules/content-visibility/admin/settings-page.php:37
 #: modules/content-visibility/admin/settings-page.php:38
@@ -811,7 +811,7 @@ msgid ""
 "\"Mini-Program Picks\" category: check only REST API, uncheck others + set "
 "visible role to \"Administrator\" = hidden on frontend and direct link "
 "returns 404, but mini-program can still read via API."
-msgstr ""
+msgstr "「小程序精选」分类：仅勾选 REST API，其他取消 + 可见角色设为「管理员」= 前端隐藏且直接访问返回 404，但小程序仍可通过 API 读取。"
 
 #: modules/content-visibility/admin/settings-page.php:46
 msgid "Category Visibility Rules"
@@ -833,7 +833,7 @@ msgstr "隐藏后仍可见角色"
 msgid ""
 "No categories yet. Please create categories in \"Posts → Categories\" before "
 "configuring visibility rules."
-msgstr ""
+msgstr "暂无分类。请在「文章 → 分类」中创建分类后再配置可见性规则。"
 
 #: modules/content-visibility/admin/settings-page.php:106
 msgid "Post-Level Hide"
@@ -844,7 +844,7 @@ msgid ""
 "On the post list page, quickly hide individual posts via the \"Visibility\" "
 "column or row actions. Hidden posts won't appear in lists, and direct links "
 "return 404."
-msgstr ""
+msgstr "在文章列表页，可通过「可见性」列或行操作快速隐藏单篇文章。隐藏的文章不会出现在列表中，直接访问链接返回 404。"
 
 #: modules/content-visibility/content-visibility.php:44
 #: modules/content-visibility/content-visibility.php:389
@@ -857,7 +857,7 @@ msgstr "内容可见性"
 msgid ""
 "Control content visibility by category/post, with channel- and role-level "
 "configuration."
-msgstr ""
+msgstr "按分类/文章控制内容可见性，支持渠道级和角色级配置。"
 
 #: modules/content-visibility/content-visibility.php:294
 msgid "Page does not exist."
@@ -876,7 +876,7 @@ msgstr "切换可见性失败，请重试。"
 msgid ""
 "Hide this post? Hidden posts won't appear in lists, and direct links return "
 "404."
-msgstr ""
+msgstr "确定要隐藏这篇文章吗？隐藏的文章不会出现在列表中，直接访问链接返回 404。"
 
 #: modules/content-visibility/content-visibility.php:447
 msgid "Show this post?"
@@ -888,7 +888,7 @@ msgid ""
 "roles. These categories will be hidden from all non-admin users "
 "(administrators may also be unable to view them on the frontend). Confirm "
 "save?"
-msgstr ""
+msgstr "警告：部分分类存在已隐藏渠道但未设置可见角色。这些分类将对所有非管理员用户隐藏（管理员也可能无法在前端查看）。确认保存？"
 
 #: modules/content-visibility/content-visibility.php:468
 msgid "Invalid rule data format"
@@ -932,7 +932,7 @@ msgstr "可见性"
 msgid ""
 "Manage WordPress user roles and capabilities. Click a role to view details "
 "and edit capabilities."
-msgstr ""
+msgstr "管理 WordPress 用户角色和权限。点击角色查看详情并编辑权限。"
 
 #: modules/role-manager/admin/roles-page.php:29
 msgid "Role"
@@ -1016,7 +1016,7 @@ msgstr "角色管理"
 msgid ""
 "Visually manage WordPress user roles and capabilities, with role duplication "
 "and bulk editing support."
-msgstr ""
+msgstr "可视化管理 WordPress 用户角色和权限，支持角色复制和批量编辑。"
 
 #. translators: %s: Role name
 #: modules/role-manager/role-manager.php:138
@@ -1031,7 +1031,7 @@ msgid ""
 "Warning: This role has %d users. After deletion, these users will lose the "
 "role and may be unable to access the admin. Please assign them new roles "
 "before deleting."
-msgstr ""
+msgstr "警告：该角色有 %d 个用户。删除后，这些用户将失去该角色，可能无法访问后台。请在删除前为他们分配新角色。"
 
 #: modules/role-manager/role-manager.php:141
 msgid "Cannot delete built-in roles."
@@ -1199,7 +1199,7 @@ msgstr "站点域名"
 msgid ""
 "Site domain verified on Baidu Search Resource Platform. If different from "
 "current site domain, fill in manually."
-msgstr ""
+msgstr "在百度搜索资源平台验证的站点域名。如与当前站点域名不同，请手动填写。"
 
 #: modules/search-push/admin/settings-page.php:52
 msgid "e.g. www.example.com"
@@ -1285,7 +1285,7 @@ msgstr "已启用 Bing 推送，请先填写 API Key。"
 msgid ""
 "Current settings may not be saved yet. Test will use the saved "
 "configuration. Continue?"
-msgstr ""
+msgstr "当前设置可能尚未保存。测试将使用已保存的配置。是否继续？"
 
 #: modules/search-push/search-push.php:279
 msgid "Unknown search engine."
@@ -1390,7 +1390,7 @@ msgstr "在文章列表添加缺失/有特色图筛选下拉框"
 msgid ""
 "When enabled, adds a \"Missing/Has Featured Image\" filter dropdown on the "
 "post list page, making it easy to find posts without featured images."
-msgstr ""
+msgstr "启用后，在文章列表页添加「缺失/有特色图」筛选下拉框，方便查找未设置特色图的文章。"
 
 #: modules/site-enhance/admin/settings-page.php:156
 msgid "Featured Image Column"
@@ -1404,7 +1404,7 @@ msgstr "在文章列表复选框后显示特色图缩略图"
 msgid ""
 "When enabled, adds a featured image thumbnail column after the checkbox in "
 "the post list, visually showing each post's featured image status."
-msgstr ""
+msgstr "启用后，在文章列表复选框后添加特色图缩略图列，直观显示每篇文章的特色图状态。"
 
 #: modules/site-enhance/admin/settings-page.php:177
 msgid "Default Featured Image"
@@ -1445,7 +1445,7 @@ msgstr "在文章快速编辑面板中增加摘要编辑框"
 msgid ""
 "When enabled, adds an excerpt edit box in the quick-edit panel of the post "
 "list, allowing excerpt editing without entering the full edit page."
-msgstr ""
+msgstr "启用后，在文章列表的快速编辑面板中添加摘要编辑框，无需进入完整编辑页即可编辑摘要。"
 
 #: modules/site-enhance/admin/settings-page.php:229
 msgid "SMTP Mail"
@@ -1518,7 +1518,7 @@ msgstr "评论头像"
 #: modules/site-enhance/admin/settings-page.php:307
 msgid ""
 "Replace Gravatar with mirror source and custom default avatar for commenters"
-msgstr ""
+msgstr "用镜像源和自定义默认头像替换评论者的 Gravatar"
 
 #: modules/site-enhance/admin/settings-page.php:317
 msgid "Mirror Source"
@@ -1629,7 +1629,7 @@ msgstr "请先启用 SMTP 发信并保存设置后再测试。"
 msgid ""
 "After enabling maintenance mode, visitors will see the maintenance page and "
 "cannot access the site normally. Confirm enabling?"
-msgstr ""
+msgstr "启用维护模式后，访客将看到维护页面且无法正常访问站点。确认启用？"
 
 #: modules/site-enhance/site-enhance.php:471
 msgid "Back to Top"
@@ -1687,7 +1687,7 @@ msgstr "认证失败，请检查 SMTP 用户名和密码是否正确。"
 msgid ""
 "Encrypted connection failed, please verify encryption method (SSL/TLS/None) "
 "is correct."
-msgstr ""
+msgstr "加密连接失败，请检查加密方式（SSL/TLS/无）是否正确。"
 
 #: modules/site-enhance/site-enhance.php:886
 msgid ""
