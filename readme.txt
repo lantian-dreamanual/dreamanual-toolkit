@@ -1,10 +1,10 @@
-=== Dreamanual Toolkit ===
+​‍‍​​‍​‍​‍‍‍‍​​‍​‍​​‍​‍​​‍​​​​‍​​‍​‍​​‍‍​‍​‍​‍​‍​‍‍​​‍​​​‍​​​‍​​​‍​​‍​​‍​‍‍​‍​‍​​‍‍‍​​​​​​‍‍​‍‍‍​‍​​‍​​‍​‍‍​‍​‍‍​‍‍‍‍​​​​‍‍​‍​​​​‍​‍‍​​‍​‍‍​‍‍​‍​‍​‍​‍‍​​‍‍‍​​‍‍​‍​​‍​​‍​‍‍​‍​‍​​‍‍​‍‍‍‍​‍‍​‍​​‍​‍​​‍‍​‍​‍​‍​​‍‍​‍​​‍​​‍​‍‍‍​​‍‍​‍​​‍​​‍​‍‍​‍​‍‍​‍​​‍‍‍​​‍‍‍​‍‍​​‍‍​​​‍​​‍‍​‍‍‍​​‍​‍​​‍​​‍‍​‍‍​​​‍‍​​​‍​​‍‍​‍‍‍​​‍​‍​​‍​​‍​‍​​​‍​‍‍​​​‍‍​‍‍​‍‍​‍​​‍‍‍​​‍​‍‍​‍​‍‍​‍‍​​‍​​​‍​‍​‍‍‍​‍​​‍‍‍​​‍‍​‍‍​​​‍‍​​​‍‍​‍‍​‍​​‍​‍​​‍​​‍​​‍‍​‍‍​​‍​​‍​​‍​‍‍​‍​‍​​‍​​​​​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍​‍​‍​​​‍​​​‍​‍​​‍‍​‍​‍​‍​​‍‍​‍​‍​‍​‍​​​‍​​​‍​‍​‍‍‍‍​​​​‍​​‍‍​‍​‍​​​‍​​​‍​​​‍​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍‍​‍​‍‍​​‍‍​​​‍​‍​​​​‍​​‍​‍​​‍​​‍​​​‍​​​‍​‍​‍​‍​​‍‍​​​‍​‍​‍​‍‍​​‍​‍​‍​​​‍‍​‍‍​​​‍​​‍​​‍​‍​​‍‍​‍​‍​​​‍​‍​‍​‍‍​​‍​‍‍‍‍​​​​‍​​‍‍​‍​‍​​​‍​​​‍​​​​​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍‍​‍​​‍​‍​​‍​​‍​‍‍‍​​‍‍​‍​​‍​​‍​‍‍​‍‍​​​‍​​​​‍​​‍‍‍‍​​‍​‍‍​​​‍​​​‍‍​​‍​​‍​‍​​‍​​​‍‍​​​‍​‍​‍‍​​‍​​‍‍​​‍​​‍​‍​‍‍​​‍​​‍​‍​​‍​‍​​‍​​‍​​​​‍‍​‍​​‍​​‍​​‍‍​‍‍​​‍​​‍​​‍​‍‍​‍​‍​​‍​‍​‍‍​​‍‍​‍​‍‍​‍​​‍‍​‍​‍‍​‍‍​‍​‍​‍‍​​‍​‍‍‍‍​​‍​‍​‍‍​​‍​‍‍‍‍​‍​​‍​‍​​​‍​​‍‍​​‍‍​‍​​‍‍​​​‍​‍​‍‍‍​‍​‍​​‍​​‍‍​‍​‍​​‍​‍‍​‍​​‍‍​‍‍​‍​‍​‍​​​‍​‍‍‍​‍​​​‍​​‍‍‍​​‍​​​‍‍‍​‍​​‍​​‍​​‍‍​​​‍​‍​​‍‍‍​​‍​‍​​‍‍​​‍‍​​​‍​‍‍​‍​​‍​‍​​‍‍‍​​‍​‍​‍​​​‍​​​‍​‍​​‍‍​‍​‍​‍​​‍‍​​​‍​‍​‍‍‍​‍​‍​‍​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍‍‍‍​‍​​‍​​‍​​‍​‍‍‍‍​​​​‍​‍‍​‍​​‍​‍​‍‍‍​‍​‍‍​​‍​‍‍‍‍​‍​​‍​‍‍​‍​​‍​​​‍‍‍​‍​‍​​​‍​‍‍‍‍​​‍​‍​‍‍​​‍​‍​‍​​‍‍​‍​​‍​​‍​‍‍‍​​‍‍​‍​​‍​​‍​‍‍​‍‍​​​‍​​‍​‍​​‍‍​‍‍​​​‍‍​​​‍‍​​‍‍​​‍​​‍​‍​‍‍​​‍‍‍‍​​‍​‍‍​​‍​​​‍‍​‍‍​‍​‍​‍​‍‍​​‍‍​‍​‍‍​‍​‍​​​‍​​‍‍​​‍​​​‍‍‍​​‍​‍‍​‍​‍‍​‍​‍‍​‍​​‍​‍​‍​​​‍​​​‍​‍​‍‍​‍​​‍​‍​​‍‍‍‍​‍‍​‍​​‍​‍​​‍​‍​​‍‍​‍​‍​​‍​‍‍​‍​​‍‍​‍​‍​​‍​‍‍​​‍​​‍‍​‍​‍​‍​‍‍​​‍​‍‍​‍​‍​​‍​​​​‍​​‍‍​‍‍​​​‍​‍‍​​‍​‍​‍​​‍‍​​‍‍​​​​​‍‍‍‍​‍​​‍​​‍‍‍‍​‍​​​‍​​​‍‍​‍​‍‍​​‍‍​​​​​‍​​‍‍​​​‍​‍​‍​​​‍​‍​​‍​​‍‍​‍‍​​​‍​‍‍​‍​​‍​‍​‍​​​‍​​‍‍​‍​‍‍‍​‍​​​‍​​‍‍‍‍​‍​‍​‍‍‍​‍​‍​‍‍​​‍‍​‍​​‍​‍​​‍‍​‍​‍​​​​‍‍​​‍‍​​​​​​‍‍​​​​​‍​‍‍​‍​​‍‍​‍‍​‍​‍​​‍​​‍​‍‍‍‍​​‍​‍​​‍‍‍‍​‍​​​‍‍‍​‍​​‍​​‍​​‍‍​​‍‍​‍​​‍‍​‍​‍​​​‍​​​‍​‍‍​​‍​​‍‍​‍​​​‍​​‍‍​‍​‍‍​‍​‍​​‍​‍​‍​‍​‍‍​‍​​‍​‍​​‍‍​​​‍​​​​‍‍​‍​​‍​‍​​‍​​​‍​​​‍‍​​​‍​​​‍‍​​‍​​​‍‍​‍​‍​​‍‍​​​​​‍​‍‍​‍​​‍​‍​‍‍‍​​‍‍​‍​‍​​‍‍​​​​​‍​‍​‍​‍​‍​​‍​​​​‍​​‍​‍​​‍‍‍​‍‍​​‍‍​​​‍‍​‍​​​‍‍‍​‍​​​‍‍​​‍‍​‍‍‍​​‍​‍‍​​‍​‍​‍‍​​​​‍​‍​​‍​​‍‍‍​‍‍​​‍‍​​​‍‍​‍‍​‍​​‍​‍​​‍​​‍​​‍‍​‍‍​​‍​​‍​​‍​‍‍​‍​‍​​‍​​​​​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍​‍​‍​​​‍​​​‍​‍​​‍‍​‍​‍​‍​​‍‍​‍​‍​‍​‍​​​‍​​​‍​‍​‍‍‍‍​​​​‍​​‍‍​‍​‍​​​‍​​​‍​​​‍​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍‍​‍​‍‍​​‍‍​​​‍​‍​​​​‍​​‍​‍​​‍​​‍​​​‍​​​‍​‍​‍​‍​​‍‍​​​‍​‍​‍​‍‍​​‍​‍​‍​​​‍‍​‍‍​​​‍​​‍​​‍​‍​​‍‍​‍​‍​​​‍​‍​‍​‍‍​​‍​‍‍‍‍​​​​‍​​‍‍​‍​‍​​​‍​​​‍​​​​​‍​‍‍‍​‍‍‍​‍​​‍‍​‍​‍‍​‍​​‍​‍​​‍​​‍​‍‍‍​​‍‍​‍​​‍​​‍​‍‍​‍‍​​​‍​​​​‍​​‍‍‍‍​​‍​‍‍​​​‍​​​‍‍​​‍‍​‍​​​​‍​​‍‍​‍​​​​‍​‍‍​‍​​​‍‍​​‍​​‍​​​‍‍​​​‍‍​​​​​‍​‍‍​‍​​‍​‍​‍​‍​‍‍​‍‍​​​‍​​​‍​‍​‍​​‍​​‍​‍‍​‍​‍​​‍‍​‍‍‍‍​‍‍​‍​​‍​‍​​‍‍‍​​‍​‍​‍‍‍​‍​‍​​​‍​‍‍‍‍​​‍​‍​‍‍​‍​​‍‍​‍​‍​​‍​​‍​‍​​‍‍​‍​‍​​‍​​‍‍‍​​‍​​​‍​​​‍‍​​​‍‍​‍‍‍​‍​​​‍​‍‍​‍​​‍​​​‍‍‍​‍​​‍‍‍​​‍‍​‍‍​‍​‍​‍‍​‍​​‍​​​​‍‍​​‍‍​​​​​​‍‍​​​​​‍​‍‍​​‍​‍‍​‍​‍​​‍​‍​‍​‍​​‍‍​​​‍​‍​​‍‍​​​‍​‍​‍‍‍​‍​​‍​​‍​​‍‍​​​‍​‍​​‍‍​‍​‍​‍​‍​​​‍‍​‍​‍‍​‍‍‍​‍​​​‍​‍‍​‍​​‍​‍​‍​​​‍​​​​​‍​‍‍‍‍​‍​​‍​​‍‍​‍​‍‍​‍​‍​​‍​​​‍‍​​‍‍​‍‍​​​‍​‍‍​‍​​‍‍​‍​‍​​‍​​‍‍‍​​‍‍​‍​‍‍​‍​‍‍​‍​​‍​​​‍​​​‍​​‍​‍​​‍‍​‍​​​​‍​​‍​​‍​‍‍​‍​​‍​‍‍‍​‍‍‍​‍‍​‍​​‍​‍​‍​‍​‍​‍‍​‍‍​‍​‍​‍​‍‍​​‍‍‍‍​‍​​‍​‍‍​‍​​‍​‍‍​​​​‍​​‍​‍​​​‍‍​​‍​​‍​‍‍​‍​​‍​‍​‍‍‍​‍​‍​​‍​​‍​​​‍​​​‍‍​​​‍​​​‍‍​​‍​​‍​‍​​‍​​‍‍​‍‍​​​‍​​‍‍​‍​‍‍​‍​​‍​‍​​‍​​‍​​‍‍​‍‍​​‍​​‍​​‍​‍‍​‍‍​‍​‍​​‍‍‍​​‍‍​‍‍​‍​‍​​‍‍‍​​‍‍​‍​‍​​‍‍​‍‍​​​‍‍​‍​​‍​‍​​‍‍​‍​‍​​​‍‍‍​‍​‍​‍‍​​‍‍​‍​​​​‍​​‍‍​​​‍​‍​‍​​​‍​​‍‍​‍​​‍‍​‍​​​‍​​‍‍‍‍​‍​‍​‍​​​‍​‍​​​‍​‍‍‍​‍​​​‍​​‍‍‍​​‍​​​‍‍‍​‍​‍​‍‍​​‍‍​‍‍​​​‍​​‍‍​‍​‍‍‍‍​​‍​​‍‍​​​​​​‍‍​‍​‍​‍​‍‍​‍​​‍​‍​‍‍‍​‍​​‍​​‍​‍‍‍​‍‍‍​‍​​‍‍​​​‍​‍​‍​​​‍​‍​​‍​​‍‍​‍‍​‍​‍​‍‍​​‍​‍‍​‍​‍​​‍​​‍​​‍​​‍‍​‍​​​‍​‍‍​​‍​‍‍​‍​‍​​‍‍​​​‍‍​‍‍‍​‍‍‍​‍​​‍‍‍​​‍‍​‍​‍​​‍‍​​‍‍‍​‍‍‍‍​​‍​‍​​‍‍‍​​‍​‍​​‍‍​‍​​‍​‍​​​‍‍‍​​‍​‍‍​​‍‍​​‍​‍​​​‍​​‍‍‍‍​‍​​‍‍‍‍​‍=== Dreamanual Toolkit ===
 Contributors: wuyifa001
 Tags: toolbox, modules, ai-optimizer, seo, smtp
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,21 @@ Yes. API keys and SMTP passwords are encrypted with AES-256-CBC using a key deri
 
 == Changelog ==
 
+= 1.4.1 =
+* Security: fixed IDOR vulnerability in AI Optimizer (missing post-level capability check)
+* Security: fixed administrator lockout in Role Manager (protected roles can no longer strip manage_options)
+* Security: API key no longer exposed to frontend in batch processing
+* Fixed: Kimi model list updated to kimi-k2.6/k2.7-code/k2.7-code-highspeed/k3 (moonshot-v1 series deprecated)
+* Fixed: Maintenance mode hardcoded lang attribute now uses get_bloginfo('language')
+* Fixed: Chinese typography now filters the_content/the_excerpt instead of full-page output buffer
+* Fixed: module deactivate now properly unregisters hooks (prevents zombie state on re-activate)
+* Added: independent Crypto class with Error_Translator for shared network error translation
+* Added: support for custom post types in AI Optimizer batch processing
+* Improved: asset versioning with filemtime fallback to plugin version
+* Improved: role user count uses count_users() instead of per-role queries
+* Improved: Baidu push URL upgraded to HTTPS
+* Improved: Site Optimize on_activate simplified (defaults via get_option fallback)
+
 = 1.4.0 =
 * Site Optimize: added Chinese Typography group (auto-spacing, text justify, smart quotes, paragraph indent)
 * Site Optimize: added Admin Ad Blocker group with editable CSS selector rules
@@ -126,6 +141,9 @@ Yes. API keys and SMTP passwords are encrypted with AES-256-CBC using a key deri
 
 == Upgrade Notice ==
 
+= 1.4.1 =
+Security fixes: IDOR vulnerability, administrator lockout, API key exposure. Bug fixes: Kimi model list, maintenance mode lang, typography output buffer, module hook lifecycle. New Crypto class with shared Error_Translator.
+
 = 1.4.0 =
 New Chinese typography, admin ad blocker, and comment avatar features. Also includes AI Optimizer error display fix, Plugin Check compliance, and translation template refresh. Existing settings preserved.
 
@@ -143,3 +161,6 @@ New back-to-top icon, smart save button behavior, WordPress.org release ready.
 
 = 1.1.0 =
 Compliance and security fixes. Recommended upgrade.
+
+
+AI生成

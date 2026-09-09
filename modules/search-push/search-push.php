@@ -49,13 +49,13 @@ class Search_Push extends Module_Base {
      */
     public function register_hooks(): void {
         // 管理菜单 & 资源
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 
         // AJAX
-        add_action( 'wp_ajax_drea_sp_save_settings', [ $this, 'ajax_save_settings' ] );
-        add_action( 'wp_ajax_drea_sp_get_settings', [ $this, 'ajax_get_settings' ] );
-        add_action( 'wp_ajax_drea_sp_test_push', [ $this, 'ajax_test_push' ] );
+        $this->on( 'wp_ajax_drea_sp_save_settings', [ $this, 'ajax_save_settings' ] );
+        $this->on( 'wp_ajax_drea_sp_get_settings', [ $this, 'ajax_get_settings' ] );
+        $this->on( 'wp_ajax_drea_sp_test_push', [ $this, 'ajax_test_push' ] );
 
         // ─── 发布/更新文章时推送 ───
         $any_enabled = (
@@ -63,8 +63,8 @@ class Search_Push extends Module_Base {
             $this->get_option( 'bing_enabled', false )
         );
         if ( $any_enabled ) {
-            add_action( 'transition_post_status', [ $this, 'on_post_status_change' ], 10, 3 );
-            add_action( 'drea_sp_delayed_push', [ $this, 'do_delayed_push' ] );
+            $this->on( 'transition_post_status', [ $this, 'on_post_status_change' ], 10, 3 );
+            $this->on( 'drea_sp_delayed_push', [ $this, 'do_delayed_push' ] );
         }
     }
 
@@ -155,14 +155,14 @@ class Search_Push extends Module_Base {
             'drea-sp-admin',
             $module_url . '/assets/css/admin.css',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/css/admin.css' )
+            $this->asset_version( $module_path . '/assets/css/admin.css' )
         );
 
         wp_enqueue_script(
             'drea-sp-admin',
             $module_url . '/assets/js/admin.js',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/js/admin.js' ),
+            $this->asset_version( $module_path . '/assets/js/admin.js' ),
             true
         );
 
@@ -360,7 +360,8 @@ class Search_Push extends Module_Base {
             return new \WP_Error( 'drea_sp_baidu', __('Baidu push token or site domain not configured.', 'dreamanual-toolkit' ) );
         }
 
-        $api_url = 'http://data.zz.baidu.com/urls?site=' . urlencode( $site ) . '&token=' . urlencode( $token );
+        // 优化 1：百度推送接口改为 HTTPS
+        $api_url = 'https://data.zz.baidu.com/urls?site=' . urlencode( $site ) . '&token=' . urlencode( $token );
 
         $response = wp_remote_post( $api_url, [
             'body'    => implode( "\n", $urls ),
@@ -442,29 +443,8 @@ class Search_Push extends Module_Base {
      * @return string 友好的中文错误提示。
      */
     private function translate_push_error( string $error, string $engine ): string {
-        $lower = strtolower( $error );
-
-        if ( false !== strpos( $lower, 'timed out' ) || false !== strpos( $lower, 'timeout' ) ) {
-            /* translators: %s: search engine name (百度/Bing) */
-            return sprintf( __('%s push: request timed out, please retry later.', 'dreamanual-toolkit' ), $engine );
-        }
-        if ( false !== strpos( $lower, 'could not resolve host' )
-            || false !== strpos( $lower, 'connection refused' )
-            || false !== strpos( $lower, 'network is unreachable' )
-        ) {
-            /* translators: %s: search engine name (百度/Bing) */
-            return sprintf( __('%s push: cannot connect to server, please check network connection.', 'dreamanual-toolkit' ), $engine );
-        }
-        if ( false !== strpos( $lower, 'ssl' ) || false !== strpos( $lower, 'certificate' ) ) {
-            /* translators: %s: search engine name (百度/Bing) */
-            return sprintf( __('%s push: SSL certificate verification failed.', 'dreamanual-toolkit' ), $engine );
-        }
-
-        // 兜底：记录原始错误到日志，返回友好提示
-        // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- 记录原始错误到服务器日志，用于运维排查
-        error_log( sprintf( '[DREA Search Push] %s push original error: %s', $engine, $error ) );
-        /* translators: %s: search engine name (Baidu/Bing) */
-        return sprintf( __('%s push failed, please check network connection or retry later.', 'dreamanual-toolkit' ), $engine );
+        // 优化 3：复用公共网络错误翻译器
+        return Error_Translator::translate_network_error( $error, $engine . ' push' );
     }
 }
 

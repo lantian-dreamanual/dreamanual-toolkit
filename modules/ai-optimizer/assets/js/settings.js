@@ -12,10 +12,10 @@
 
     var modelMap = {
         kimi: [
-            { value: 'kimi-k2.6', label: 'kimi-k2.6' },
-            { value: 'moonshot-v1-8k', label: 'moonshot-v1-8k' },
-            { value: 'moonshot-v1-32k', label: 'moonshot-v1-32k' },
-            { value: 'moonshot-v1-128k', label: 'moonshot-v1-128k' }
+            { value: 'kimi-k2.6', label: 'Kimi K2.6 (通用)' },
+            { value: 'kimi-k2.7-code', label: 'Kimi K2.7 Code (编程)' },
+            { value: 'kimi-k2.7-code-highspeed', label: 'Kimi K2.7 Code Highspeed' },
+            { value: 'kimi-k3', label: 'Kimi K3 (旗舰)' }
         ],
         openai: [
             { value: 'gpt-4o-mini', label: 'gpt-4o-mini' },

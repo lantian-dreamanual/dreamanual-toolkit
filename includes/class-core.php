@@ -20,6 +20,9 @@ class Core {
     /** @var array<string> 当前启用的模块 ID 列表 */
     private array $active_modules = [];
 
+    /** @var array<string, bool> 已注册 hooks 的模块标记，防止重复注册 */
+    private array $registered_modules = [];
+
     /**
      * 获取单例
      */
@@ -108,8 +111,11 @@ class Core {
         $this->active_modules[] = $id;
         $this->save_active_modules();
 
-        // 注册 hooks
-        $module->register_hooks();
+        // 低危 4 修复：仅在当前请求中模块尚未注册 hooks 时才注册，避免重复
+        if ( ! $this->registered_modules[ $id ] ?? false ) {
+            $module->register_hooks();
+            $this->registered_modules[ $id ] = true;
+        }
 
         return true;
     }
@@ -128,6 +134,13 @@ class Core {
 
         if ( ! $this->is_module_active( $id ) ) {
             return true; // 已停用
+        }
+
+        // 低危 4 修复：先注销 hooks 再清空已注册标记，
+        // 避免同请求内"停用→再激活"时 register_hooks 被跳过导致模块功能假死
+        if ( $this->registered_modules[ $id ] ?? false ) {
+            $module->unregister_hooks();
+            unset( $this->registered_modules[ $id ] );
         }
 
         // 调用模块的停用钩子
@@ -174,6 +187,7 @@ class Core {
             $module = $this->get_module( $id );
             if ( $module ) {
                 $module->register_hooks();
+                $this->registered_modules[ $id ] = true;
             }
         }
     }
@@ -295,7 +309,7 @@ class Core {
      * @return string|int 版本号。
      */
     private function asset_version( string $path ) {
-        $mtime = filemtime( $path );
+        $mtime = @filemtime( $path );
         return false === $mtime ? DREA_VERSION : $mtime;
     }
 

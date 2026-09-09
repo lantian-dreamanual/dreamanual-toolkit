@@ -53,18 +53,18 @@ class AI_Optimizer extends Module_Base {
      * {@inheritdoc}
      */
     public function register_hooks(): void {
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
-        add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
 
         // AJAX handlers
-        add_action( 'wp_ajax_drea_ai_get_posts', [ $this, 'ajax_get_posts' ] );
-        add_action( 'wp_ajax_drea_ai_generate', [ $this, 'ajax_generate' ] );
-        add_action( 'wp_ajax_drea_ai_apply', [ $this, 'ajax_apply' ] );
-        add_action( 'wp_ajax_drea_ai_get_existing_tags', [ $this, 'ajax_get_existing_tags' ] );
-        add_action( 'wp_ajax_drea_ai_save_settings', [ $this, 'ajax_save_settings' ] );
-        add_action( 'wp_ajax_drea_ai_get_settings', [ $this, 'ajax_get_settings' ] );
-        add_action( 'wp_ajax_drea_ai_generate_single', [ $this, 'ajax_generate_single' ] );
+        $this->on( 'wp_ajax_drea_ai_get_posts', [ $this, 'ajax_get_posts' ] );
+        $this->on( 'wp_ajax_drea_ai_generate', [ $this, 'ajax_generate' ] );
+        $this->on( 'wp_ajax_drea_ai_apply', [ $this, 'ajax_apply' ] );
+        $this->on( 'wp_ajax_drea_ai_get_existing_tags', [ $this, 'ajax_get_existing_tags' ] );
+        $this->on( 'wp_ajax_drea_ai_save_settings', [ $this, 'ajax_save_settings' ] );
+        $this->on( 'wp_ajax_drea_ai_get_settings', [ $this, 'ajax_get_settings' ] );
+        $this->on( 'wp_ajax_drea_ai_generate_single', [ $this, 'ajax_generate_single' ] );
     }
 
     /**
@@ -206,13 +206,13 @@ class AI_Optimizer extends Module_Base {
                 'drea-ai-admin',
                 $module_url . '/assets/css/admin.css',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/css/admin.css' )
+                $this->asset_version( $module_path . '/assets/css/admin.css' )
             );
             wp_enqueue_script(
                 'drea-ai-batch',
                 $module_url . '/assets/js/batch.js',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/js/batch.js' ),
+                $this->asset_version( $module_path . '/assets/js/batch.js' ),
                 true
             );
             $this->localize_script( 'drea-ai-batch', 'batch' );
@@ -224,13 +224,13 @@ class AI_Optimizer extends Module_Base {
                 'drea-ai-admin',
                 $module_url . '/assets/css/admin.css',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/css/admin.css' )
+                $this->asset_version( $module_path . '/assets/css/admin.css' )
             );
             wp_enqueue_script(
                 'drea-ai-settings',
                 $module_url . '/assets/js/settings.js',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/js/settings.js' ),
+                $this->asset_version( $module_path . '/assets/js/settings.js' ),
                 true
             );
             $this->localize_script( 'drea-ai-settings', 'settings' );
@@ -243,13 +243,13 @@ class AI_Optimizer extends Module_Base {
                 'drea-ai-admin',
                 $module_url . '/assets/css/admin.css',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/css/admin.css' )
+                $this->asset_version( $module_path . '/assets/css/admin.css' )
             );
             wp_enqueue_script(
                 'drea-ai-meta',
                 $module_url . '/assets/js/meta-box.js',
                 [],
-                filemtime( $module_path . '/assets/js/meta-box.js' ),
+                $this->asset_version( $module_path . '/assets/js/meta-box.js' ),
                 true
             );
             $this->localize_script( 'drea-ai-meta', 'meta' );
@@ -360,9 +360,12 @@ class AI_Optimizer extends Module_Base {
         $page     = isset( $_POST['page'] ) ? max( 1, intval( $_POST['page'] ) ) : 1;
         $per_page = isset( $_POST['per_page'] ) ? max( 1, min( 100, intval( $_POST['per_page'] ) ) ) : 20;
         $category = isset( $_POST['category'] ) ? intval( $_POST['category'] ) : 0;
+        // 低危 1 修复：支持前端传入的 post_type 参数
+        $post_type_raw = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'post';
+        $post_type     = in_array( $post_type_raw, get_post_types( [ 'public' => true ], 'names' ), true ) ? $post_type_raw : 'post';
 
         $args = [
-            'post_type'      => 'post',
+            'post_type'      => $post_type,
             'post_status'    => 'publish',
             'posts_per_page' => $per_page,
             'paged'          => $page,
@@ -397,7 +400,7 @@ class AI_Optimizer extends Module_Base {
     }
 
     /**
-     * AJAX: 生成 AI 建议（批量页用，从前端传 API Key）
+     * AJAX: 生成 AI 建议（批量页用，从后端设置读取 API Key）
      */
     public function ajax_generate(): void {
         check_ajax_referer( 'drea_ai_nonce', 'nonce' );
@@ -406,9 +409,6 @@ class AI_Optimizer extends Module_Base {
         }
 
         $post_id        = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
-        $provider       = isset( $_POST['provider'] ) ? sanitize_text_field( wp_unslash( $_POST['provider'] ) ) : 'deepseek';
-        $model          = isset( $_POST['model'] ) ? sanitize_text_field( wp_unslash( $_POST['model'] ) ) : '';
-        $api_key        = isset( $_POST['api_key'] ) ? sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) : '';
         $existing_tags  = isset( $_POST['existing_tags'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['existing_tags'] ) ) : [];
         // F-33: 限制 existing_tags 数量上限，避免请求体过大
         if ( count( $existing_tags ) > 500 ) {
@@ -424,8 +424,11 @@ class AI_Optimizer extends Module_Base {
         if ( ! $post_id ) {
             wp_send_json_error( __('Invalid post ID.', 'dreamanual-toolkit' ) );
         }
-        if ( ! $api_key ) {
-            wp_send_json_error( __('Please enter API Key.', 'dreamanual-toolkit' ) );
+
+        // Bug 5 修复：从后端设置读取 provider/model/api_key，不再从前端接收
+        $settings = $this->get_settings_array();
+        if ( empty( $settings['api_key'] ) ) {
+            wp_send_json_error( __('Please configure API Key in "AI Optimizer → Settings" first.', 'dreamanual-toolkit' ) );
         }
 
         $post = get_post( $post_id );
@@ -441,7 +444,7 @@ class AI_Optimizer extends Module_Base {
         $current_tags      = get_the_tags( $post_id );
         $current_tag_names = $current_tags && ! is_wp_error( $current_tags ) ? wp_list_pluck( $current_tags, 'name' ) : [];
 
-        $ai     = new AI_Client( $provider, $api_key, $model );
+        $ai     = new AI_Client( $settings['provider'], $settings['api_key'], $settings['model'] );
         $result = $ai->generate_tags_and_slug( $post->post_title, $content, $current_tag_names, $existing_tags, $opt_tags, $opt_slug, $opt_excerpt, $excerpt_length, $excerpt_prompt, $tag_limit );
 
         if ( is_wp_error( $result ) ) {
@@ -473,6 +476,11 @@ class AI_Optimizer extends Module_Base {
         $post = get_post( $post_id );
         if ( ! $post ) {
             wp_send_json_error( __('Post not found.', 'dreamanual-toolkit' ) );
+        }
+
+        // Bug 1 修复：文章级权限校验，防止越权读取/处理他人文章内容
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
+            wp_send_json_error( __( 'You do not have permission to edit this post.', 'dreamanual-toolkit' ) );
         }
 
         $content = wp_strip_all_tags( $post->post_content );
@@ -525,6 +533,11 @@ class AI_Optimizer extends Module_Base {
         $post = get_post( $post_id );
         if ( ! $post ) {
             wp_send_json_error( __('Post not found.', 'dreamanual-toolkit' ) );
+        }
+
+        // Bug 1 修复：文章级权限校验，防止越权修改他人文章
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
+            wp_send_json_error( __( 'You do not have permission to edit this post.', 'dreamanual-toolkit' ) );
         }
 
         $update_data = [ 'ID' => $post_id ];
@@ -675,7 +688,12 @@ class AI_Optimizer extends Module_Base {
             wp_send_json_error( __('Insufficient permissions.', 'dreamanual-toolkit' ) );
         }
 
-        wp_send_json_success( $this->get_settings_array() );
+        $settings = $this->get_settings_array();
+
+        // Bug 5 修复：不下发明文 API Key 到前端，仅返回是否已配置
+        $settings['api_key'] = ! empty( $settings['api_key'] );
+
+        wp_send_json_success( $settings );
     }
 
     // ─── 辅助方法 ──────────────────────────────────────

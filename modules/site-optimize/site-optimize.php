@@ -257,12 +257,12 @@ class Site_Optimize extends Module_Base {
      */
     public function register_hooks(): void {
         // 管理菜单 & 资源
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 
         // AJAX
-        add_action( 'wp_ajax_drea_so_save_settings', [ $this, 'ajax_save_settings' ] );
-        add_action( 'wp_ajax_drea_so_get_settings', [ $this, 'ajax_get_settings' ] );
+        $this->on( 'wp_ajax_drea_so_save_settings', [ $this, 'ajax_save_settings' ] );
+        $this->on( 'wp_ajax_drea_so_get_settings', [ $this, 'ajax_get_settings' ] );
 
         $features = self::get_features();
 
@@ -274,133 +274,135 @@ class Site_Optimize extends Module_Base {
             switch ( $key ) {
                 // ─── 常规功能 ───
                 case 'disable_revisions':
-                    add_filter( 'wp_revisions_to_keep', '__return_zero' );
+                    $this->filter( 'wp_revisions_to_keep', '__return_zero' );
                     break;
 
                 case 'disable_trackback':
-                    add_filter( 'pings_open', '__return_false', 20 );
-                    add_action( 'pre_ping', [ $this, 'disable_self_ping' ] );
+                    $this->filter( 'pings_open', '__return_false', 20 );
+                    $this->on( 'pre_ping', [ $this, 'disable_self_ping' ] );
                     break;
 
                 case 'disable_xmlrpc':
-                    add_filter( 'xmlrpc_enabled', '__return_false' );
-                    add_filter( 'wp_headers', [ $this, 'remove_xmlrpc_header' ] );
+                    $this->filter( 'xmlrpc_enabled', '__return_false' );
+                    $this->filter( 'wp_headers', [ $this, 'remove_xmlrpc_header' ] );
                     break;
 
                 case 'disable_feed':
-                    add_action( 'do_feed', [ $this, 'disable_feed_redirect' ], 1 );
-                    add_action( 'do_feed_rdf', [ $this, 'disable_feed_redirect' ], 1 );
-                    add_action( 'do_feed_rss', [ $this, 'disable_feed_redirect' ], 1 );
-                    add_action( 'do_feed_rss2', [ $this, 'disable_feed_redirect' ], 1 );
-                    add_action( 'do_feed_atom', [ $this, 'disable_feed_redirect' ], 1 );
-                    remove_action( 'wp_head', 'feed_links_extra', 3 );
-                    remove_action( 'wp_head', 'feed_links', 2 );
+                    $this->on( 'do_feed', [ $this, 'disable_feed_redirect' ], 1 );
+                    $this->on( 'do_feed_rdf', [ $this, 'disable_feed_redirect' ], 1 );
+                    $this->on( 'do_feed_rss', [ $this, 'disable_feed_redirect' ], 1 );
+                    $this->on( 'do_feed_rss2', [ $this, 'disable_feed_redirect' ], 1 );
+                    $this->on( 'do_feed_atom', [ $this, 'disable_feed_redirect' ], 1 );
+                    $this->remove( 'wp_head', 'feed_links_extra', 3 );
+                    $this->remove( 'wp_head', 'feed_links', 2 );
                     break;
 
                 case 'disable_admin_email_ver':
-                    remove_action( 'admin_enqueue_scripts', 'wp_auth_check_load' );
-                    add_filter( 'admin_email_check_interval', '__return_zero' );
+                    $this->remove( 'admin_enqueue_scripts', 'wp_auth_check_load' );
+                    $this->filter( 'admin_email_check_interval', '__return_zero' );
                     break;
 
                 // ─── 转换功能 ───
                 case 'disable_emoji':
-                    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-                    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-                    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-                    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-                    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-                    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-                    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-                    add_filter( 'tiny_mce_plugins', [ $this, 'remove_emoji_tinymce' ] );
-                    add_filter( 'wp_resource_hints', [ $this, 'remove_emoji_dns' ], 10, 2 );
+                    $this->remove( 'wp_head', 'print_emoji_detection_script', 7 );
+                    $this->remove( 'admin_print_scripts', 'print_emoji_detection_script' );
+                    $this->remove( 'wp_print_styles', 'print_emoji_styles' );
+                    $this->remove( 'admin_print_styles', 'print_emoji_styles' );
+                    $this->remove( 'the_content_feed', 'wp_staticize_emoji' );
+                    $this->remove( 'comment_text_rss', 'wp_staticize_emoji' );
+                    $this->remove( 'wp_mail', 'wp_staticize_emoji_for_email' );
+                    $this->filter( 'tiny_mce_plugins', [ $this, 'remove_emoji_tinymce' ] );
+                    $this->filter( 'wp_resource_hints', [ $this, 'remove_emoji_dns' ], 10, 2 );
                     break;
 
                 case 'disable_text_transform':
-                    remove_filter( 'the_content', 'wptexturize' );
-                    remove_filter( 'the_title', 'wptexturize' );
-                    remove_filter( 'the_excerpt', 'wptexturize' );
-                    remove_filter( 'comment_text', 'wptexturize' );
-                    remove_filter( 'widget_text', 'wptexturize' );
-                    remove_filter( 'list_cats', 'wptexturize' );
+                    $this->remove( 'the_content', 'wptexturize' );
+                    $this->remove( 'the_title', 'wptexturize' );
+                    $this->remove( 'the_excerpt', 'wptexturize' );
+                    $this->remove( 'comment_text', 'wptexturize' );
+                    $this->remove( 'widget_text', 'wptexturize' );
+                    $this->remove( 'list_cats', 'wptexturize' );
                     break;
 
                 case 'disable_capital_p':
-                    remove_filter( 'the_title', 'capital_P_dangit', 11 );
-                    remove_filter( 'the_content', 'capital_P_dangit', 11 );
-                    remove_filter( 'comment_text', 'capital_P_dangit', 31 );
+                    $this->remove( 'the_title', 'capital_P_dangit', 11 );
+                    $this->remove( 'the_content', 'capital_P_dangit', 11 );
+                    $this->remove( 'comment_text', 'capital_P_dangit', 31 );
                     break;
 
                 // ─── 后台功能 ───
                 case 'remove_gdpr_page':
-                    add_action( 'admin_menu', [ $this, 'remove_privacy_page' ], 999 );
-                    add_action( 'admin_init', [ $this, 'remove_privacy_admin_notices' ] );
+                    $this->on( 'admin_menu', [ $this, 'remove_privacy_page' ], 999 );
+                    $this->on( 'admin_init', [ $this, 'remove_privacy_admin_notices' ] );
                     break;
 
                 case 'remove_dashboard_news':
-                    add_action( 'admin_init', [ $this, 'remove_dashboard_widgets' ] );
+                    $this->on( 'admin_init', [ $this, 'remove_dashboard_widgets' ] );
                     break;
 
                 case 'remove_help_tabs':
-                    add_action( 'admin_head', [ $this, 'remove_help_tabs' ], 999 );
+                    $this->on( 'admin_head', [ $this, 'remove_help_tabs' ], 999 );
                     break;
 
                 case 'remove_screen_options':
-                    add_filter( 'screen_options_show_screen', '__return_false' );
+                    $this->filter( 'screen_options_show_screen', '__return_false' );
                     break;
 
                 // ─── 页面功能 ───
                 case 'remove_wp_version':
-                    remove_action( 'wp_head', 'wp_generator' );
-                    remove_action( 'wp_head', 'rest_output_link_wp_head' );
-                    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-                    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-                    remove_action( 'template_redirect', 'rest_output_link_header', 11 );
-                    add_filter( 'the_generator', '__return_empty_string' );
+                    $this->remove( 'wp_head', 'wp_generator' );
+                    $this->remove( 'wp_head', 'rest_output_link_wp_head' );
+                    $this->remove( 'wp_head', 'wp_oembed_add_discovery_links' );
+                    $this->remove( 'wp_head', 'wp_oembed_add_host_js' );
+                    $this->remove( 'template_redirect', 'rest_output_link_header', 11 );
+                    $this->filter( 'the_generator', '__return_empty_string' );
                     break;
 
                 case 'remove_toolbar_option':
-                    add_action( 'admin_init', [ $this, 'remove_toolbar_option' ] );
-                    add_filter( 'show_admin_bar', '__return_false' );
+                    $this->on( 'admin_init', [ $this, 'remove_toolbar_option' ] );
+                    $this->filter( 'show_admin_bar', '__return_false' );
                     break;
 
                 // ─── 嵌入功能 ───
                 case 'disable_auto_embeds':
-                    remove_action( 'parse_query', 'wp_oembed_parse_query' );
-                    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-                    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-                    add_filter( 'embed_oembed_discover', '__return_false' );
+                    $this->remove( 'parse_query', 'wp_oembed_parse_query' );
+                    $this->remove( 'wp_head', 'wp_oembed_add_discovery_links' );
+                    $this->remove( 'wp_head', 'wp_oembed_add_host_js' );
+                    $this->filter( 'embed_oembed_discover', '__return_false' );
                     break;
 
                 case 'disable_wp_embed':
-                    add_action( 'wp_enqueue_scripts', [ $this, 'deregister_wp_embed' ], 99 );
-                    add_action( 'admin_enqueue_scripts', [ $this, 'deregister_wp_embed' ], 99 );
+                    $this->on( 'wp_enqueue_scripts', [ $this, 'deregister_wp_embed' ], 99 );
+                    $this->on( 'admin_enqueue_scripts', [ $this, 'deregister_wp_embed' ], 99 );
                     break;
 
                 // ─── 性能优化 ───
                 case 'enable_speculative':
-                    add_action( 'wp_head', [ $this, 'output_speculation_rules' ], 99 );
+                    $this->on( 'wp_head', [ $this, 'output_speculation_rules' ], 99 );
                     break;
 
                 // ─── 内容排版 ───
                 case 'typography_space':
-                    add_action( 'template_redirect', [ $this, 'typography_space' ] );
+                    $this->filter( 'the_content', [ $this, 'typography_space_content' ] );
+                    $this->filter( 'the_excerpt', [ $this, 'typography_space_content' ] );
                     break;
 
                 case 'typography_align':
-                    add_action( 'wp_head', [ $this, 'typography_align_css' ], 99 );
+                    $this->on( 'wp_head', [ $this, 'typography_align_css' ], 99 );
                     break;
 
                 case 'typography_quotes':
-                    add_action( 'template_redirect', [ $this, 'typography_quotes' ] );
+                    $this->filter( 'the_content', [ $this, 'typography_quotes_content' ] );
+                    $this->filter( 'the_excerpt', [ $this, 'typography_quotes_content' ] );
                     break;
 
                 case 'typography_indent':
-                    add_action( 'wp_head', [ $this, 'typography_indent_css' ], 99 );
+                    $this->on( 'wp_head', [ $this, 'typography_indent_css' ], 99 );
                     break;
 
                 // ─── 后台广告拦截 ───
                 case 'adblock_enabled':
-                    add_action( 'admin_head', [ $this, 'admin_adblock_css' ], 99 );
+                    $this->on( 'admin_head', [ $this, 'admin_adblock_css' ], 99 );
                     break;
             }
         }
@@ -410,12 +412,8 @@ class Site_Optimize extends Module_Base {
      * {@inheritdoc}
      */
     public function on_activate(): void {
-        // 写入默认值
-        foreach ( self::get_features() as $key => $default ) {
-            if ( false === get_option( 'drea_site_optimize_' . $key ) ) {
-                update_option( 'drea_site_optimize_' . $key, $default );
-            }
-        }
+        // 优化 4：get_features() 已提供默认值，各处 get_option($key, $default) 自动回退
+        // 无需在激活时逐个写库，减少不必要的 option 行
     }
 
     /**
@@ -494,14 +492,14 @@ class Site_Optimize extends Module_Base {
             'drea-so-admin',
             $module_url . '/assets/css/admin.css',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/css/admin.css' )
+            $this->asset_version( $module_path . '/assets/css/admin.css' )
         );
 
         wp_enqueue_script(
             'drea-so-admin',
             $module_url . '/assets/js/admin.js',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/js/admin.js' ),
+            $this->asset_version( $module_path . '/assets/js/admin.js' ),
             true
         );
 
@@ -694,21 +692,29 @@ class Site_Optimize extends Module_Base {
     // ─── 内容排版 ────────────────────────────────────────
 
     /**
-     * 中英文/数字间自动加空格（模板渲染时输出缓冲替换）
+     * 中英文/数字间自动加空格（the_content / the_excerpt 过滤器）
      *
-     * @return void
+     * Bug 4 修复：从输出缓冲全页替换改为仅过滤正文，避免误伤脚本/HTML属性
+     *
+     * @param string $content 文章正文 HTML。
+     * @return string 处理后的 HTML。
      */
-    public function typography_space(): void {
-        if ( php_sapi_name() === 'cli' ) {
-            return;
-        }
-        ob_start( function ( $buffer ) {
-            $buffer = preg_replace( '~(\p{Han})([a-zA-Z0-9\p{Ps}\p{Pi}])(?![^<]*>)~u', '\1 \2', $buffer );
-            $buffer = preg_replace( '~([a-zA-Z0-9\p{Pe}\p{Pf}])(\p{Han})(?![^<]*>)~u', '\1 \2', $buffer );
-            $buffer = preg_replace( '~([!?‽:;,.%])(\p{Han})~u', '\1 \2', $buffer );
-            $buffer = preg_replace( '~(\p{Han})([@$#])~u', '\1 \2', $buffer );
-            return $buffer;
-        } );
+    public function typography_space_content( string $content ): string {
+        // 提取 HTML 标签外的文本内容进行替换，标签内部不动
+        // 用回调函数对纯文本部分做正则替换
+        return preg_replace_callback(
+            '/([^<]*)(<[^>]*>)?/s',
+            function ( $matches ) {
+                $text  = $matches[1];
+                $tag   = $matches[2] ?? '';
+                $text  = preg_replace( '~(\p{Han})([a-zA-Z0-9\p{Ps}\p{Pi}])~u', '\1 \2', $text );
+                $text  = preg_replace( '~([a-zA-Z0-9\p{Pe}\p{Pf}])(\p{Han})~u', '\1 \2', $text );
+                $text  = preg_replace( '~([!?‽:;,.%])(\p{Han})~u', '\1 \2', $text );
+                $text  = preg_replace( '~(\p{Han})([@$#])~u', '\1 \2', $text );
+                return $text . $tag;
+            },
+            $content
+        );
     }
 
     /**
@@ -730,23 +736,30 @@ class Site_Optimize extends Module_Base {
     }
 
     /**
-     * 弯引号：直引号转「」『』（模板渲染输出缓冲替换）
+     * 弯引号：直引号转「」『』（the_content / the_excerpt 过滤器）
      *
-     * @return void
+     * Bug 4 修复：从输出缓冲全页替换改为仅过滤正文，避免误伤 HTML 属性与脚本
+     *
+     * @param string $content 文章正文 HTML。
+     * @return string 处理后的 HTML。
      */
-    public function typography_quotes(): void {
-        if ( php_sapi_name() === 'cli' ) {
-            return;
-        }
-        ob_start( function ( $buffer ) {
-            // 英文缩写撇号保留 's 't 're 've 'd 'll
-            $buffer = str_replace( [ 'n’t', '’s', '’m', '’re', '’ve', '’d', '’ll' ], [ "n&rsquo;t", '&rsquo;s', '&rsquo;m', '&rsquo;re', '&rsquo;ve', '&rsquo;d', '&rsquo;ll' ], $buffer );
-            $buffer = str_replace( '“', '&#12300;', $buffer );
-            $buffer = str_replace( '”', '&#12301;', $buffer );
-            $buffer = str_replace( '‘', '&#12302;', $buffer );
-            $buffer = str_replace( '’', '&#12303;', $buffer );
-            return $buffer;
-        } );
+    public function typography_quotes_content( string $content ): string {
+        // 仅对标签外文本做替换
+        return preg_replace_callback(
+            '/([^<]*)(<[^>]*>)?/s',
+            function ( $matches ) {
+                $text = $matches[1];
+                $tag  = $matches[2] ?? '';
+                // 英文缩写撇号保留
+                $text = str_replace( [ 'n’t', '’s', '’m', '’re', '’ve', '’d', '’ll' ], [ "n&rsquo;t", '&rsquo;s', '&rsquo;m', '&rsquo;re', '&rsquo;ve', '&rsquo;d', '&rsquo;ll' ], $text );
+                $text = str_replace( '“', '&#12300;', $text );
+                $text = str_replace( '”', '&#12301;', $text );
+                $text = str_replace( '‘', '&#12302;', $text );
+                $text = str_replace( '’', '&#12303;', $text );
+                return $text . $tag;
+            },
+            $content
+        );
     }
 
     /**

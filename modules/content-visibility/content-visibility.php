@@ -63,32 +63,32 @@ class Content_Visibility extends Module_Base {
      */
     public function register_hooks(): void {
         // 前端 / RSS / 搜索 — pre_get_posts
-        add_action( 'pre_get_posts', [ $this, 'filter_query' ] );
+        $this->on( 'pre_get_posts', [ $this, 'filter_query' ] );
 
         // 单篇文章直链 404 拦截
-        add_action( 'template_redirect', [ $this, 'block_single_post' ] );
+        $this->on( 'template_redirect', [ $this, 'block_single_post' ] );
 
         // REST API
-        add_filter( 'rest_post_query', [ $this, 'filter_rest_query' ], 10, 2 );
+        $this->filter( 'rest_post_query', [ $this, 'filter_rest_query' ], 10, 2 );
 
         // WP Sitemap
-        add_filter( 'wp_sitemaps_posts_query_args', [ $this, 'filter_sitemap_posts' ] );
-        add_filter( 'wp_sitemaps_taxonomies_query_args', [ $this, 'filter_sitemap_taxonomies' ] );
+        $this->filter( 'wp_sitemaps_posts_query_args', [ $this, 'filter_sitemap_posts' ] );
+        $this->filter( 'wp_sitemaps_taxonomies_query_args', [ $this, 'filter_sitemap_taxonomies' ] );
 
         // 管理菜单
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 
         // AJAX
-        add_action( 'wp_ajax_drea_cv_save_rules', [ $this, 'ajax_save_rules' ] );
-        add_action( 'wp_ajax_drea_cv_toggle_post', [ $this, 'ajax_toggle_post' ] );
+        $this->on( 'wp_ajax_drea_cv_save_rules', [ $this, 'ajax_save_rules' ] );
+        $this->on( 'wp_ajax_drea_cv_toggle_post', [ $this, 'ajax_toggle_post' ] );
 
         // 文章列表: 可见性筛选器 + 快速操作
-        add_action( 'restrict_manage_posts', [ $this, 'add_post_filter' ] );
-        add_filter( 'parse_query', [ $this, 'parse_post_filter' ] );
-        add_filter( 'post_row_actions', [ $this, 'add_row_action' ], 10, 2 );
-        add_filter( 'manage_post_posts_columns', [ $this, 'add_column' ] );
-        add_action( 'manage_post_posts_custom_column', [ $this, 'render_column' ], 10, 2 );
+        $this->on( 'restrict_manage_posts', [ $this, 'add_post_filter' ] );
+        $this->filter( 'parse_query', [ $this, 'parse_post_filter' ] );
+        $this->filter( 'post_row_actions', [ $this, 'add_row_action' ], 10, 2 );
+        $this->filter( 'manage_post_posts_columns', [ $this, 'add_column' ] );
+        $this->on( 'manage_post_posts_custom_column', [ $this, 'render_column' ], 10, 2 );
     }
 
     /**
@@ -424,14 +424,14 @@ class Content_Visibility extends Module_Base {
             'drea-cv-admin',
             $module_url . '/assets/css/admin.css',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/css/admin.css' )
+            $this->asset_version( $module_path . '/assets/css/admin.css' )
         );
 
         wp_enqueue_script(
             'drea-cv-admin',
             $module_url . '/assets/js/admin.js',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/js/admin.js' ),
+            $this->asset_version( $module_path . '/assets/js/admin.js' ),
             true
         );
 

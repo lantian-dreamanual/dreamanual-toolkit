@@ -27,10 +27,10 @@
 
     var modelMap = {
         kimi: [
-            { value: 'kimi-k2.6', label: 'kimi-k2.6' },
-            { value: 'moonshot-v1-8k', label: 'moonshot-v1-8k' },
-            { value: 'moonshot-v1-32k', label: 'moonshot-v1-32k' },
-            { value: 'moonshot-v1-128k', label: 'moonshot-v1-128k' }
+            { value: 'kimi-k2.6', label: 'Kimi K2.6 (通用)' },
+            { value: 'kimi-k2.7-code', label: 'Kimi K2.7 Code (编程)' },
+            { value: 'kimi-k2.7-code-highspeed', label: 'Kimi K2.7 Code Highspeed' },
+            { value: 'kimi-k3', label: 'Kimi K3 (旗舰)' }
         ],
         openai: [
             { value: 'gpt-4o-mini', label: 'gpt-4o-mini' },
@@ -157,6 +157,7 @@
                 if (res.success) {
                     state.settings = res.data;
                     syncToggleUI();
+                    // Bug 5 修复：api_key 现在返回布尔值（是否已配置），不再返回明文
                     if (!state.settings.api_key) {
                         showToast(i18n.pleaseConfigureApiKey, 'error', 5000);
                     } else {
@@ -198,6 +199,7 @@
     // ─── 加载文章 ───
 
     function loadPosts(page) {
+        // Bug 5 修复：api_key 现在返回布尔值，不再检查明文
         if (!state.settings.api_key) {
             showToast(i18n.pleaseConfigureApiKey, 'error');
             return;
@@ -438,9 +440,7 @@
         return postAjax({
             action: 'drea_ai_generate',
             post_id: postId,
-            provider: state.settings.provider || 'deepseek',
-            model: state.settings.model || '',
-            api_key: state.settings.api_key || '',
+            // Bug 5 修复：不再传 provider/model/api_key，后端从设置读取
             existing_tags: state.existingTags,
             opt_tags: state.settings.opt_tags ? 1 : 0,
             opt_slug: state.settings.opt_slug ? 1 : 0,

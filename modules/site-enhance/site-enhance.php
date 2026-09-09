@@ -52,63 +52,63 @@ class Site_Enhance extends Module_Base {
      */
     public function register_hooks(): void {
         // 管理菜单 & 资源
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 
         // AJAX
-        add_action( 'wp_ajax_drea_se_save_settings', [ $this, 'ajax_save_settings' ] );
-        add_action( 'wp_ajax_drea_se_get_settings', [ $this, 'ajax_get_settings' ] );
+        $this->on( 'wp_ajax_drea_se_save_settings', [ $this, 'ajax_save_settings' ] );
+        $this->on( 'wp_ajax_drea_se_get_settings', [ $this, 'ajax_get_settings' ] );
 
         // ─── 回到顶部 ───
         if ( $this->get_option( 'btt_enabled', false ) ) {
-            add_action( 'wp_footer', [ $this, 'render_back_to_top' ] );
-            add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_btt_assets' ] );
+            $this->on( 'wp_footer', [ $this, 'render_back_to_top' ] );
+            $this->on( 'wp_enqueue_scripts', [ $this, 'enqueue_btt_assets' ] );
         }
 
         // ─── 维护模式 ───
         if ( $this->get_option( 'maintenance_enabled', false ) ) {
-            add_action( 'template_redirect', [ $this, 'maintenance_mode' ] );
+            $this->on( 'template_redirect', [ $this, 'maintenance_mode' ] );
         }
 
         // ─── 特色图片筛选器 ───
         if ( $this->get_option( 'feat_img_enabled', false ) ) {
-            add_action( 'restrict_manage_posts', [ $this, 'add_feat_img_filter' ] );
-            add_filter( 'parse_query', [ $this, 'parse_feat_img_filter' ] );
+            $this->on( 'restrict_manage_posts', [ $this, 'add_feat_img_filter' ] );
+            $this->filter( 'parse_query', [ $this, 'parse_feat_img_filter' ] );
         }
 
         // ─── 特色图片列 ───
         if ( $this->get_option( 'feat_img_col_enabled', false ) ) {
-            add_filter( 'manage_posts_columns', [ $this, 'add_feat_img_column' ] );
-            add_action( 'manage_posts_custom_column', [ $this, 'render_feat_img_column' ], 10, 2 );
+            $this->filter( 'manage_posts_columns', [ $this, 'add_feat_img_column' ] );
+            $this->on( 'manage_posts_custom_column', [ $this, 'render_feat_img_column' ], 10, 2 );
         }
 
         // ─── 默认特色图片 ───
         if ( $this->get_option( 'default_feat_img_enabled', false ) && $this->get_option( 'default_feat_img_id', 0 ) ) {
-            add_filter( 'post_thumbnail_html', [ $this, 'default_featured_image' ], 10, 5 );
+            $this->filter( 'post_thumbnail_html', [ $this, 'default_featured_image' ], 10, 5 );
         }
 
         // ─── 摘要快速编辑 ───
         if ( $this->get_option( 'quickedit_excerpt_enabled', false ) ) {
-            add_filter( 'manage_posts_columns', [ $this, 'add_excerpt_data_column' ] );
-            add_action( 'manage_posts_custom_column', [ $this, 'render_excerpt_data_column' ], 10, 2 );
-            add_action( 'quick_edit_custom_box', [ $this, 'quick_edit_excerpt_box' ], 10, 2 );
-            add_action( 'admin_head-edit.php', [ $this, 'quick_edit_excerpt_script' ] );
+            $this->filter( 'manage_posts_columns', [ $this, 'add_excerpt_data_column' ] );
+            $this->on( 'manage_posts_custom_column', [ $this, 'render_excerpt_data_column' ], 10, 2 );
+            $this->on( 'quick_edit_custom_box', [ $this, 'quick_edit_excerpt_box' ], 10, 2 );
+            $this->on( 'admin_head-edit.php', [ $this, 'quick_edit_excerpt_script' ] );
         }
 
         // ─── SMTP 发信 ───
         if ( $this->get_option( 'smtp_enabled', false ) ) {
-            add_action( 'phpmailer_init', [ $this, 'configure_smtp' ] );
-            add_filter( 'wp_mail_from', [ $this, 'smtp_mail_from' ] );
-            add_filter( 'wp_mail_from_name', [ $this, 'smtp_mail_from_name' ] );
+            $this->on( 'phpmailer_init', [ $this, 'configure_smtp' ] );
+            $this->filter( 'wp_mail_from', [ $this, 'smtp_mail_from' ] );
+            $this->filter( 'wp_mail_from_name', [ $this, 'smtp_mail_from_name' ] );
         }
 
         // ─── 评论头像优化 ───
         if ( $this->get_option( 'avatar_fallback_enabled', false ) ) {
-            add_filter( 'get_avatar_url', [ $this, 'avatar_optimize_url' ], 10, 3 );
+            $this->filter( 'get_avatar_url', [ $this, 'avatar_optimize_url' ], 10, 3 );
         }
 
         // ─── SMTP 测试发信 AJAX ───
-        add_action( 'wp_ajax_drea_se_smtp_test', [ $this, 'ajax_smtp_test' ] );
+        $this->on( 'wp_ajax_drea_se_smtp_test', [ $this, 'ajax_smtp_test' ] );
     }
 
     /**
@@ -237,7 +237,7 @@ class Site_Enhance extends Module_Base {
                 'drea-se-admin',
                 $module_url . '/assets/css/admin.css',
                 [ 'drea-toolkit-common' ],
-                filemtime( $module_path . '/assets/css/admin.css' )
+                $this->asset_version( $module_path . '/assets/css/admin.css' )
             );
             return;
         }
@@ -250,14 +250,14 @@ class Site_Enhance extends Module_Base {
             'drea-se-admin',
             $module_url . '/assets/css/admin.css',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/css/admin.css' )
+            $this->asset_version( $module_path . '/assets/css/admin.css' )
         );
 
         wp_enqueue_script(
             'drea-se-admin',
             $module_url . '/assets/js/admin.js',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/js/admin.js' ),
+            $this->asset_version( $module_path . '/assets/js/admin.js' ),
             true
         );
 
@@ -331,7 +331,7 @@ class Site_Enhance extends Module_Base {
             && '\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2' !== $_POST['smtp_pass']
         ) {
             $smtp_pass = (string) wp_unslash( $_POST['smtp_pass'] );
-            update_option( 'drea_site_enhance_smtp_pass', AI_Client::encrypt( $smtp_pass ) );
+            update_option( 'drea_site_enhance_smtp_pass', Crypto::encrypt( $smtp_pass ) );
         }
         // phpcs:enable
 
@@ -486,7 +486,7 @@ class Site_Enhance extends Module_Base {
             'drea-btt',
             $module_url . '/assets/css/btt.css',
             [],
-            filemtime( $module_path . '/assets/css/btt.css' )
+            $this->asset_version( $module_path . '/assets/css/btt.css' )
         );
 
         $js = <<<'JS'
@@ -544,7 +544,8 @@ JS;
         wp_print_styles( [ 'drea-maintenance' ] );
         $style_tags = ob_get_clean();
 
-        $html = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' . esc_html__('Under Maintenance', 'dreamanual-toolkit' ) . ' — ' . esc_html( $site_name ) . '</title>';
+        // Bug 3 修复：lang 属性使用动态获取的站点语言，不再硬编码 zh-CN
+        $html = '<!DOCTYPE html><html lang="' . esc_attr( get_bloginfo( 'language' ) ) . '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' . esc_html__('Under Maintenance', 'dreamanual-toolkit' ) . ' — ' . esc_html( $site_name ) . '</title>';
         $html .= $style_tags;
         $html .= '</head><body class="' . esc_attr( $body_classes ) . '">';
         $html .= '<div class="drea-maintenance__card">';
@@ -729,14 +730,14 @@ JS;
             'drea-quickedit-excerpt',
             $module_url . '/assets/css/quickedit-excerpt.css',
             [],
-            filemtime( $module_path . '/assets/css/quickedit-excerpt.css' )
+            $this->asset_version( $module_path . '/assets/css/quickedit-excerpt.css' )
         );
 
         wp_enqueue_script(
             'drea-quickedit-excerpt',
             $module_url . '/assets/js/quickedit-excerpt.js',
             [ 'jquery' ],
-            filemtime( $module_path . '/assets/js/quickedit-excerpt.js' ),
+            $this->asset_version( $module_path . '/assets/js/quickedit-excerpt.js' ),
             true
         );
     }
@@ -754,7 +755,7 @@ JS;
         $encryption = $this->get_option( 'smtp_encryption', 'ssl' );
         $user       = $this->get_option( 'smtp_user', '' );
         $pass_enc   = get_option( 'drea_site_enhance_smtp_pass', '' );
-        $pass       = $pass_enc ? AI_Client::decrypt( $pass_enc ) : '';
+        $pass       = $pass_enc ? Crypto::decrypt( $pass_enc ) : '';
 
         if ( ! $host || ! $user ) {
             return;
@@ -847,14 +848,16 @@ JS;
     private function translate_smtp_error( string $error ): string {
         $error_lower = strtolower( $error );
 
-        // 连接类错误
+        // 优化 3：连接类错误复用公共网络错误翻译器
         if ( false !== strpos( $error_lower, 'connect() failed' )
             || false !== strpos( $error_lower, 'connection refused' )
             || false !== strpos( $error_lower, 'connection timed out' )
             || false !== strpos( $error_lower, 'network is unreachable' )
         ) {
-            return __('Cannot connect to SMTP server, please verify host and port are correct and the server allows connections on that port.', 'dreamanual-toolkit' );
+            return Error_Translator::translate_network_error( $error, 'SMTP' );
         }
+
+        // 以下为 SMTP 专属错误，保留在此处
 
         // 认证类错误
         if ( false !== strpos( $error_lower, 'could not authenticate' )
@@ -863,7 +866,7 @@ JS;
             || false !== strpos( $error_lower, '530' )
             || false !== strpos( $error_lower, 'invalid credentials' )
         ) {
-            return __('Authentication failed, please verify SMTP username and password.', 'dreamanual-toolkit' );
+            return __( 'Authentication failed, please verify SMTP username and password.', 'dreamanual-toolkit' );
         }
 
         // 加密/SSL/TLS 类错误
@@ -872,7 +875,7 @@ JS;
             || false !== strpos( $error_lower, 'certificate' )
             || false !== strpos( $error_lower, 'encryption' )
         ) {
-            return __('Encrypted connection failed, please verify encryption method (SSL/TLS/None) is correct.', 'dreamanual-toolkit' );
+            return __( 'Encrypted connection failed, please verify encryption method (SSL/TLS/None) is correct.', 'dreamanual-toolkit' );
         }
 
         // 发件人地址被拒绝
@@ -880,7 +883,7 @@ JS;
             || false !== strpos( $error_lower, 'sender not allowed' )
             || ( false !== strpos( $error_lower, 'from' ) && false !== strpos( $error_lower, 'rejected' ) )
         ) {
-            return __('Sender address rejected, please verify the from email matches the SMTP account.', 'dreamanual-toolkit' );
+            return __( 'Sender address rejected, please verify the from email matches the SMTP account.', 'dreamanual-toolkit' );
         }
 
         // 收件人地址被拒绝
@@ -888,7 +891,7 @@ JS;
             || false !== strpos( $error_lower, 'user unknown' )
             || false !== strpos( $error_lower, 'no such user' )
         ) {
-            return __('Recipient address rejected, please verify the recipient email.', 'dreamanual-toolkit' );
+            return __( 'Recipient address rejected, please verify the recipient email.', 'dreamanual-toolkit' );
         }
 
         // 发送频率限制
@@ -896,7 +899,7 @@ JS;
             || false !== strpos( $error_lower, 'too many' )
             || false !== strpos( $error_lower, 'exceed' )
         ) {
-            return __('Send frequency limit exceeded, please retry later.', 'dreamanual-toolkit' );
+            return __( 'Send frequency limit exceeded, please retry later.', 'dreamanual-toolkit' );
         }
 
         // 邮箱容量满
@@ -904,12 +907,12 @@ JS;
             || false !== strpos( $error_lower, 'mailbox full' )
             || false !== strpos( $error_lower, 'insufficient' )
         ) {
-            return __('Mailbox full or quota exceeded.', 'dreamanual-toolkit' );
+            return __( 'Mailbox full or quota exceeded.', 'dreamanual-toolkit' );
         }
 
         // 兜底：友好中文 + 简略原始错误
         /* translators: %s: original SMTP error message */
-        return sprintf( __('Send failed, please verify SMTP settings. Original error: %s', 'dreamanual-toolkit' ), $error );
+        return sprintf( __( 'Send failed, please verify SMTP settings. Original error: %s', 'dreamanual-toolkit' ), $error );
     }
 
     /**

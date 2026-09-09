@@ -52,17 +52,17 @@ class Role_Manager extends Module_Base {
      * {@inheritdoc}
      */
     public function register_hooks(): void {
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
+        $this->on( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        $this->on( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 
         // AJAX
-        add_action( 'wp_ajax_drea_rm_get_roles', [ $this, 'ajax_get_roles' ] );
-        add_action( 'wp_ajax_drea_rm_get_role', [ $this, 'ajax_get_role' ] );
-        add_action( 'wp_ajax_drea_rm_add_role', [ $this, 'ajax_add_role' ] );
-        add_action( 'wp_ajax_drea_rm_copy_role', [ $this, 'ajax_copy_role' ] );
-        add_action( 'wp_ajax_drea_rm_delete_role', [ $this, 'ajax_delete_role' ] );
-        add_action( 'wp_ajax_drea_rm_update_role', [ $this, 'ajax_update_role' ] );
-        add_action( 'wp_ajax_drea_rm_change_user_role', [ $this, 'ajax_change_user_role' ] );
+        $this->on( 'wp_ajax_drea_rm_get_roles', [ $this, 'ajax_get_roles' ] );
+        $this->on( 'wp_ajax_drea_rm_get_role', [ $this, 'ajax_get_role' ] );
+        $this->on( 'wp_ajax_drea_rm_add_role', [ $this, 'ajax_add_role' ] );
+        $this->on( 'wp_ajax_drea_rm_copy_role', [ $this, 'ajax_copy_role' ] );
+        $this->on( 'wp_ajax_drea_rm_delete_role', [ $this, 'ajax_delete_role' ] );
+        $this->on( 'wp_ajax_drea_rm_update_role', [ $this, 'ajax_update_role' ] );
+        $this->on( 'wp_ajax_drea_rm_change_user_role', [ $this, 'ajax_change_user_role' ] );
     }
 
     /**
@@ -119,14 +119,14 @@ class Role_Manager extends Module_Base {
             'drea-rm-admin',
             $module_url . '/assets/css/admin.css',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/css/admin.css' )
+            $this->asset_version( $module_path . '/assets/css/admin.css' )
         );
 
         wp_enqueue_script(
             'drea-rm-admin',
             $module_url . '/assets/js/admin.js',
             [ 'drea-toolkit-common' ],
-            filemtime( $module_path . '/assets/js/admin.js' ),
+            $this->asset_version( $module_path . '/assets/js/admin.js' ),
             true
         );
 
@@ -175,8 +175,12 @@ class Role_Manager extends Module_Base {
         $wp_roles = wp_roles();
         $roles    = [];
 
+        // 低危 3 优化：用 count_users() 一次取全部用户角色计数，避免逐角色 N 次查询
+        $user_counts = count_users();
+        $role_counts = isset( $user_counts['avail_roles'] ) ? $user_counts['avail_roles'] : [];
+
         foreach ( $wp_roles->roles as $name => $info ) {
-            $user_count = count( get_users( [ 'role' => $name, 'fields' => 'ID' ] ) );
+            $user_count = isset( $role_counts[ $name ] ) ? (int) $role_counts[ $name ] : 0;
             $roles[]    = [
                 'name'        => $name,
                 'display_name' => translate_user_role( $info['name'] ),
@@ -321,6 +325,15 @@ class Role_Manager extends Module_Base {
         $role = get_role( $role_name );
         if ( ! $role ) {
             wp_send_json_error( [ 'message' => __('Role does not exist', 'dreamanual-toolkit' ) ] );
+        }
+
+        // Bug 2 修复：保护 administrator 角色不被移除 manage_options 能力，防止全站锁死
+        if ( in_array( $role_name, self::PROTECTED_ROLES, true ) ) {
+            if ( ! in_array( 'manage_options', $caps, true ) ) {
+                wp_send_json_error( [
+                    'message' => __( 'Cannot remove "manage_options" from a protected role (e.g. administrator).', 'dreamanual-toolkit' ),
+                ] );
+            }
         }
 
         // F-18: 先备份旧能力，更新失败时回滚

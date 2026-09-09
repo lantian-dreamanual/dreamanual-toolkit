@@ -101,11 +101,12 @@ class AI_Client {
      */
     public static function get_model_options( string $provider ): array {
         $map = [
+            // Bug 6 修复：moonshot-v1 系列已于 2026-08-31 下线，更新为当前可用模型
             'kimi' => [
-                [ 'value' => 'kimi-k2.6', 'label' => 'kimi-k2.6' ],
-                [ 'value' => 'moonshot-v1-8k', 'label' => 'moonshot-v1-8k' ],
-                [ 'value' => 'moonshot-v1-32k', 'label' => 'moonshot-v1-32k' ],
-                [ 'value' => 'moonshot-v1-128k', 'label' => 'moonshot-v1-128k' ],
+                [ 'value' => 'kimi-k2.6', 'label' => 'Kimi K2.6 (通用)' ],
+                [ 'value' => 'kimi-k2.7-code', 'label' => 'Kimi K2.7 Code (编程)' ],
+                [ 'value' => 'kimi-k2.7-code-highspeed', 'label' => 'Kimi K2.7 Code Highspeed' ],
+                [ 'value' => 'kimi-k3', 'label' => 'Kimi K3 (旗舰)' ],
             ],
             'openai' => [
                 [ 'value' => 'gpt-4o-mini', 'label' => 'gpt-4o-mini' ],
@@ -128,36 +129,25 @@ class AI_Client {
     // ─── 加密工具 ──────────────────────────────────────
 
     /**
-     * 加密 API 密钥
+     * 加密 API 密钥（代理到 Crypto 工具类）
+     *
+     * 优化 2：加密逻辑已抽取到独立 Crypto 类，此处保留静态代理以维持向后兼容
      *
      * @param string $plain_text 明文。
      * @return string 加密后的 base64 字符串。
      */
     public static function encrypt( string $plain_text ): string {
-        $key      = hash( 'sha256', AUTH_KEY . SECURE_AUTH_KEY, true );
-        $iv_len   = openssl_cipher_iv_length( 'aes-256-cbc' );
-        $iv       = openssl_random_pseudo_bytes( $iv_len );
-        $encrypted = openssl_encrypt( $plain_text, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv );
-        return base64_encode( $iv . $encrypted ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+        return Crypto::encrypt( $plain_text );
     }
 
     /**
-     * 解密 API 密钥
+     * 解密 API 密钥（代理到 Crypto 工具类）
      *
      * @param string $cipher_text 加密的 base64 字符串。
      * @return string 明文，失败返回空字符串。
      */
     public static function decrypt( string $cipher_text ): string {
-        $key    = hash( 'sha256', AUTH_KEY . SECURE_AUTH_KEY, true );
-        $data   = base64_decode( $cipher_text, true ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
-        if ( false === $data ) {
-            return '';
-        }
-        $iv_len   = openssl_cipher_iv_length( 'aes-256-cbc' );
-        $iv       = substr( $data, 0, $iv_len );
-        $encrypted = substr( $data, $iv_len );
-        $decrypted = openssl_decrypt( $encrypted, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv );
-        return false === $decrypted ? '' : $decrypted;
+        return Crypto::decrypt( $cipher_text );
     }
 
     // ─── 内部方法 ──────────────────────────────────────
@@ -398,15 +388,16 @@ class AI_Client {
         $msg  = $response->get_error_message();
 
         if ( 'http_request_failed' === $code ) {
+            // 优化 3：复用公共网络错误翻译器
             if ( false !== stripos( $msg, 'cURL error 28' ) || false !== stripos( $msg, 'timed out' ) ) {
-                return new \WP_Error( 'request_timeout', __('AI request timed out, please retry later.', 'dreamanual-toolkit' ) );
+                return new \WP_Error( 'request_timeout', __( 'AI request timed out, please retry later.', 'dreamanual-toolkit' ) );
             }
             if ( false !== stripos( $msg, 'Could not resolve host' ) || false !== stripos( $msg, 'Connection refused' ) || false !== stripos( $msg, 'Network is unreachable' ) ) {
-                return new \WP_Error( 'connection_failed', __('Cannot connect to AI service, please check network.', 'dreamanual-toolkit' ) );
+                return new \WP_Error( 'connection_failed', __( 'Cannot connect to AI service, please check network.', 'dreamanual-toolkit' ) );
             }
-            return new \WP_Error( 'network_error', __('Network error, please check connection.', 'dreamanual-toolkit' ) );
+            return new \WP_Error( 'network_error', __( 'Network error, please check connection.', 'dreamanual-toolkit' ) );
         }
 
-        return new \WP_Error( 'request_failed', __('Request failed, please check network connection or retry later.', 'dreamanual-toolkit' ) );
+        return new \WP_Error( 'request_failed', __( 'Request failed, please check network connection or retry later.', 'dreamanual-toolkit' ) );
     }
 }
