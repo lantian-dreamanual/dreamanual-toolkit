@@ -192,12 +192,12 @@ abstract class Module_Base {
      * 低危 4 修复：site-optimize 模块需要反注册核心 WP hook（如 emoji、feed 等），
      * 停用模块时应将这些 hook 恢复，避免功能残留。
      *
-     * @param string   $hook     hook 名。
-     * @param callable $callback 被移除的回调。
-     * @param int      $priority 优先级。
+     * @param string          $hook     hook 名。
+     * @param callable|string $callback 被移除的回调。
+     * @param int             $priority 优先级。
      * @return void
      */
-    protected function remove( string $hook, callable $callback, int $priority = 10 ): void {
+    protected function remove( string $hook, $callback, int $priority = 10 ): void {
         remove_action( $hook, $callback, $priority );
         remove_filter( $hook, $callback, $priority );
         $this->removed_hooks[] = [ 'type' => 'action', 'hook' => $hook, 'callback' => $callback, 'priority' => $priority ];
