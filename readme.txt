@@ -4,7 +4,7 @@ Tags: toolbox, modules, ai-optimizer, seo, smtp
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.1
+Stable tag: 1.4.3
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,9 @@ Yes. API keys and SMTP passwords are encrypted with AES-256-CBC using a key deri
 
 == Changelog ==
 
+= 1.4.3 =
+* Fixed: AI Optimizer meta box no longer forces a page reload after applying changes (reload was blocked by the editor beforeunload guard, leaving the Apply button stuck; also risked losing unsaved content). Applied tags/slug/excerpt are now merged into the block editor state instead.
+
 = 1.4.2 =
 * Fixed: PHP 8.3 fatal error on activation - Module_Base::remove() callable type hint relaxed to accept string function names
 
@@ -143,6 +146,9 @@ Yes. API keys and SMTP passwords are encrypted with AES-256-CBC using a key deri
 * Initial release with 6 modules
 
 == Upgrade Notice ==
+
+= 1.4.3 =
+Fixes the stuck "Apply Changes" button in the AI Optimizer meta box: changes no longer trigger a page reload and are synced into the editor instead.
 
 = 1.4.2 =
 PHP 8.3 compatibility fix: fatal error on plugin activation caused by strict callable type checking in Module_Base::remove().

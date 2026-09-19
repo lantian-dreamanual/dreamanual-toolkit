@@ -332,7 +332,9 @@ class AI_Optimizer extends Module_Base {
                 'generationFailed'     => __('Generation failed: ', 'dreamanual-toolkit' ),
                 'noTagsGenerated'      => __('No tags generated', 'dreamanual-toolkit' ),
                 'applying'             => __('Applying...', 'dreamanual-toolkit' ),
-                'applied'              => __('Applied! Page will refresh.', 'dreamanual-toolkit' ),
+                'applied'              => __('Applied!', 'dreamanual-toolkit' ),
+                'appliedEditorNote'    => __('Changes have been synced into the editor and saved to the database. Click "Update" to keep them in sync with your content.', 'dreamanual-toolkit' ),
+                'appliedClassicNote'   => __('Changes have been saved to the database and filled into the form below. Click "Update" to keep them in sync.', 'dreamanual-toolkit' ),
                 'applyChanges'         => __('Apply Changes', 'dreamanual-toolkit' ),
                 'applyFailed'          => __('Apply failed: ', 'dreamanual-toolkit' ),
                 'notGenerated'         => __('Not generated', 'dreamanual-toolkit' ),
@@ -541,17 +543,20 @@ class AI_Optimizer extends Module_Base {
         }
 
         $update_data = [ 'ID' => $post_id ];
+        $tag_ids    = [];
+        $applied_slug = $post->post_name;
 
         if ( ! empty( $tags ) ) {
             $tag_result = wp_set_post_tags( $post_id, $tags );
             if ( is_wp_error( $tag_result ) ) {
                 wp_send_json_error( __('Tag save failed, please retry.', 'dreamanual-toolkit' ) );
             }
+            $tag_ids = array_map( 'intval', (array) $tag_result );
         }
 
         if ( ! empty( $slug ) && $slug !== $post->post_name ) {
-            $slug = wp_unique_post_slug( $slug, $post_id, $post->post_status, $post->post_type, $post->post_parent );
-            $update_data['post_name'] = $slug;
+            $applied_slug = wp_unique_post_slug( $slug, $post_id, $post->post_status, $post->post_type, $post->post_parent );
+            $update_data['post_name'] = $applied_slug;
         }
 
         if ( ! empty( $excerpt ) ) {
@@ -568,7 +573,8 @@ class AI_Optimizer extends Module_Base {
         wp_send_json_success( [
             'message' => __('Changes applied.', 'dreamanual-toolkit' ),
             'tags'    => $tags,
-            'slug'    => $slug,
+            'tag_ids' => $tag_ids,
+            'slug'    => $applied_slug,
             'excerpt' => $excerpt,
         ] );
     }

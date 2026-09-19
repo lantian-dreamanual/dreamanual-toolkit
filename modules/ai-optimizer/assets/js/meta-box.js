@@ -54,12 +54,12 @@
                 setTimeout(function () { msg.remove(); }, 500);
             }, 8000);
         } else {
-            // success/info 消息 4 秒后自动淡出
+            // success/info 消息 8 秒后自动淡出（含编辑器同步提示，需阅读时间）
             setTimeout(function () {
                 msg.style.transition = 'opacity .5s';
                 msg.style.opacity = '0';
                 setTimeout(function () { msg.remove(); }, 500);
-            }, 4000);
+            }, 8000);
         }
     }
 
@@ -133,6 +133,49 @@
         if (suggestionEl) suggestionEl.style.display = '';
     }
 
+    function isBlockEditor() {
+        return typeof wp !== 'undefined'
+            && wp.data
+            && wp.data.select
+            && wp.data.select('core/editor')
+            && typeof wp.data.dispatch === 'function'
+            && wp.data.select('core/editor').getCurrentPostId();
+    }
+
+    /**
+     * 把已写入数据库的值合并进块编辑器状态，
+     * 避免用户随后点「更新」时用编辑器旧值覆盖服务端刚写入的数据。
+     */
+    function mergeIntoBlockEditor(data) {
+        var fields = {};
+        if (data.tag_ids && data.tag_ids.length) fields.tags = data.tag_ids;
+        if (data.excerpt) fields.excerpt = data.excerpt;
+        if (data.slug) fields.slug = data.slug;
+        if (!Object.keys(fields).length) return;
+
+        var postType = wp.data.select('core/editor').getCurrentPostType() || 'post';
+        var postId   = wp.data.select('core/editor').getCurrentPostId();
+        wp.data.dispatch('core').editEntityRecord('postType', postType, postId, fields);
+    }
+
+    /**
+     * 经典编辑器兜底：把值填进表单字段，随下次「更新」一起提交。
+     */
+    function mergeIntoClassicEditor(data) {
+        if (data.excerpt) {
+            var excerptField = document.querySelector('#excerpt');
+            if (excerptField) excerptField.value = data.excerpt;
+        }
+        if (data.slug) {
+            var slugField = document.querySelector('#post_name');
+            if (slugField) slugField.value = data.slug;
+        }
+        if (data.tags && data.tags.length) {
+            var tagInput = document.querySelector('#tax-input-post_tag');
+            if (tagInput) tagInput.value = data.tags.join(', ');
+        }
+    }
+
     function apply() {
         if (!suggestion || !postId) return;
 
@@ -163,12 +206,19 @@
             })
             .then(function (res) {
                 if (res.success) {
-                    // 应用成功后刷新页面，确保表单从数据库重新加载
-                    // 避免用户点"发布/更新"时旧表单值覆盖 AJAX 写入的数据
-                    showMessage(i18n.applied, 'success');
-                    setTimeout(function () {
-                        location.reload();
-                    }, 500);
+                    // 数据已由服务端写入数据库。不刷新页面（会被编辑器的
+                    // beforeunload 拦截导致按钮卡死，且点「离开」会丢失
+                    // 未保存的正文），改为把结果合并进编辑器状态，
+                    // 随用户下次「更新」一起保存，保持两边一致。
+                    if (isBlockEditor()) {
+                        mergeIntoBlockEditor(res.data);
+                        showMessage(i18n.applied + ' ' + i18n.appliedEditorNote, 'info');
+                    } else {
+                        mergeIntoClassicEditor(res.data);
+                        showMessage(i18n.applied + ' ' + i18n.appliedClassicNote, 'info');
+                    }
+                    btn.disabled = false;
+                    btn.textContent = i18n.applyChanges;
                 } else {
                     showMessage(i18n.applyFailed + (res.data || i18n.unknownError), 'error');
                     btn.disabled = false;
