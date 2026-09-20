@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dreamanual Toolkit 1.4.2\n"
+"Project-Id-Version: Dreamanual Toolkit 1.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dreamanual-toolkit\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-09T00:00:00+00:00\n"
+"POT-Creation-Date: 2026-09-20T02:45:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: dreamanual-toolkit\n"
@@ -507,7 +507,7 @@ msgid "No tags"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:282
-#: modules/ai-optimizer/ai-optimizer.php:338
+#: modules/ai-optimizer/ai-optimizer.php:340
 msgid "Not generated"
 msgstr ""
 
@@ -684,73 +684,85 @@ msgid "Applying..."
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:335
-msgid "Applied! Page will refresh."
+msgid "Applied!"
 msgstr ""
 
 #: modules/ai-optimizer/ai-optimizer.php:336
+msgid ""
+"Changes have been synced into the editor and saved to the database. Click "
+"\"Update\" to keep them in sync with your content."
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:337
+msgid ""
+"Changes have been saved to the database and filled into the form below. "
+"Click \"Update\" to keep them in sync."
+msgstr ""
+
+#: modules/ai-optimizer/ai-optimizer.php:338
 #: modules/ai-optimizer/admin/meta-box.php:37
 msgid "Apply Changes"
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:337
+#: modules/ai-optimizer/ai-optimizer.php:339
 msgid "Apply failed: "
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:357
-#: modules/ai-optimizer/ai-optimizer.php:408
-#: modules/ai-optimizer/ai-optimizer.php:463
-#: modules/ai-optimizer/ai-optimizer.php:521
-#: modules/ai-optimizer/ai-optimizer.php:582
-#: modules/ai-optimizer/ai-optimizer.php:626
-#: modules/ai-optimizer/ai-optimizer.php:688
+#: modules/ai-optimizer/ai-optimizer.php:359
+#: modules/ai-optimizer/ai-optimizer.php:410
+#: modules/ai-optimizer/ai-optimizer.php:465
+#: modules/ai-optimizer/ai-optimizer.php:523
+#: modules/ai-optimizer/ai-optimizer.php:588
+#: modules/ai-optimizer/ai-optimizer.php:632
+#: modules/ai-optimizer/ai-optimizer.php:694
 msgid "Insufficient permissions."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:425
-#: modules/ai-optimizer/ai-optimizer.php:468
-#: modules/ai-optimizer/ai-optimizer.php:530
+#: modules/ai-optimizer/ai-optimizer.php:427
+#: modules/ai-optimizer/ai-optimizer.php:470
+#: modules/ai-optimizer/ai-optimizer.php:532
 msgid "Invalid post ID."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:431
-#: modules/ai-optimizer/ai-optimizer.php:473
+#: modules/ai-optimizer/ai-optimizer.php:433
+#: modules/ai-optimizer/ai-optimizer.php:475
 msgid "Please configure API Key in \"AI Optimizer → Settings\" first."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:436
-#: modules/ai-optimizer/ai-optimizer.php:478
-#: modules/ai-optimizer/ai-optimizer.php:535
+#: modules/ai-optimizer/ai-optimizer.php:438
+#: modules/ai-optimizer/ai-optimizer.php:480
+#: modules/ai-optimizer/ai-optimizer.php:537
 msgid "Post not found."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:483
-#: modules/ai-optimizer/ai-optimizer.php:540
+#: modules/ai-optimizer/ai-optimizer.php:485
+#: modules/ai-optimizer/ai-optimizer.php:542
 msgid "You do not have permission to edit this post."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:548
+#: modules/ai-optimizer/ai-optimizer.php:552
 msgid "Tag save failed, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:564
+#: modules/ai-optimizer/ai-optimizer.php:569
 msgid "Post update failed, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:569
+#: modules/ai-optimizer/ai-optimizer.php:574
 msgid "Changes applied."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:592
+#: modules/ai-optimizer/ai-optimizer.php:598
 msgid "Failed to load tag list, please retry."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:615
+#: modules/ai-optimizer/ai-optimizer.php:621
 msgid ""
 "AI processing failed, please retry later. If the issue persists,"
 " check AI Optimizer settings."
 msgstr ""
 
-#: modules/ai-optimizer/ai-optimizer.php:642
+#: modules/ai-optimizer/ai-optimizer.php:648
 msgid "Unsupported AI provider, please choose DeepSeek / Kimi / OpenAI / Claude."
 msgstr ""
 
@@ -1572,7 +1584,7 @@ msgstr ""
 #: modules/search-push/search-push.php:173
 #: modules/search-push/search-push.php:234
 #: modules/ai-optimizer/ai-optimizer.php:320
-#: modules/ai-optimizer/ai-optimizer.php:678
+#: modules/ai-optimizer/ai-optimizer.php:684
 #: modules/site-optimize/site-optimize.php:510
 #: modules/site-optimize/site-optimize.php:555
 msgid "Settings saved."
@@ -1582,7 +1594,7 @@ msgstr ""
 #: modules/site-enhance/site-enhance.php:402
 #: modules/search-push/search-push.php:174
 #: modules/search-push/search-push.php:231
-#: modules/ai-optimizer/ai-optimizer.php:667
+#: modules/ai-optimizer/ai-optimizer.php:673
 #: modules/content-visibility/content-visibility.php:443
 #: modules/content-visibility/content-visibility.php:494
 #: modules/content-visibility/content-visibility.php:533
