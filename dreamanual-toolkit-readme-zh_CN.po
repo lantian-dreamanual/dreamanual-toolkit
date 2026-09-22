@@ -1,0 +1,478 @@
+# Translation of Plugins - Dreamanual Toolkit - Stable Readme (latest release) in Chinese (China)
+# This file is distributed under the same license as the Plugins - Dreamanual Toolkit - Stable Readme (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - Dreamanual Toolkit - Stable Readme (latest release)\n"
+"PO-Revision-Date: +0000\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.1.0\n"
+
+#. Short description.
+#, gp-priority: high
+msgid ""
+"Modular WordPress toolbox consolidating micro-plugins into one. Each module "
+"toggles independently; disabled modules add zero overhead."
+msgstr "模块化 WordPress 工具箱，将多个微型插件整合为一个。各模块可独立开关；已禁用的模块不产生任何额外开销。"
+
+#. Plugin name.
+#, gp-priority: high
+msgid "Dreamanual Toolkit"
+msgstr "Dreamanual Toolkit"
+
+#. Found in description list item.
+msgid ""
+"Site Optimize - 16 site optimization toggles, Chinese typography, admin ad "
+"blocker, plus Speculative Loading"
+msgstr "站点优化——16 项站点优化开关、中文排版、后台广告拦截，以及 Speculative Loading"
+
+#. Found in description list item.
+msgid ""
+"Site Enhance - back-to-top button, maintenance mode, featured image filters,"
+" default featured image, quick-edit excerpt, comment avatar optimization, "
+"SMTP mail"
+msgstr "站点增强——返回顶部按钮、维护模式、特色图片筛选、默认特色图片、快速编辑摘要、评论头像优化、SMTP 邮件"
+
+#. Found in faq paragraph.
+msgid ""
+"Yes. API keys and SMTP passwords are encrypted with AES-256-CBC using a key "
+"derived from your wp-config.php AUTH_KEY and SECURE_AUTH_KEY."
+msgstr ""
+"安全。API 密钥和 SMTP 密码使用由 wp-config.php 中的 AUTH_KEY 和 SECURE_AUTH_KEY 派生的密钥进行 "
+"AES-256-CBC 加密。"
+
+#. Found in faq paragraph.
+msgid ""
+"No. Disabled modules load no code and register no hooks, so there is zero "
+"overhead from unused features."
+msgstr "不会。被禁用的模块不加载任何代码、不注册任何钩子，因此未使用的功能不会带来任何额外开销。"
+
+#. Found in faq header.
+msgid "Are API keys stored securely?"
+msgstr "API 密钥存储安全吗？"
+
+#. Found in faq header.
+msgid "Does this plugin slow down my site?"
+msgstr "这个插件会让我的站点变慢吗？"
+
+#. Found in installation list item.
+msgid "Go to DM Toolkit - Module Management and enable the modules you need"
+msgstr "进入「DM Toolkit - 模块管理」，启用你需要的模块"
+
+#. Found in installation list item.
+msgid "Activate Dreamanual Toolkit on the Plugins page"
+msgstr "在「插件」页面启用 Dreamanual Toolkit"
+
+#. Found in installation list item.
+msgid "Upload the dreamanual-toolkit folder to /wp-content/plugins/"
+msgstr "将 dreamanual-toolkit 文件夹上传到 /wp-content/plugins/"
+
+#. Found in description paragraph.
+msgid ""
+"Bing Webmaster Tools - https://www.bing.com/webmasters\n"
+"Terms of Service: https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx\n"
+"Privacy Policy: https://privacy.microsoft.com/en-us/privacystatement"
+msgstr ""
+"必应站长工具 - https://www.bing.com/webmasters\n"
+"服务条款：https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx\n"
+"隐私政策：https://privacy.microsoft.com/en-us/privacystatement"
+
+#. Found in description paragraph.
+msgid ""
+"Baidu Search Resource Platform - http://data.zz.baidu.com\n"
+"Terms of Service: https://www.baidu.com/duty/\n"
+"Privacy Policy: https://www.baidu.com/duty/"
+msgstr ""
+"百度搜索资源平台 - http://data.zz.baidu.com\n"
+"服务条款：https://www.baidu.com/duty/\n"
+"隐私政策：https://www.baidu.com/duty/"
+
+#. Found in description paragraph.
+msgid ""
+"Submits post URLs to search engine indexing APIs when a post is published or"
+" updated. Requires site-specific API tokens configured by the site admin. No"
+" data is sent unless the module is enabled and tokens are provided."
+msgstr ""
+"当文章发布或更新时，将文章 URL 提交到搜索引擎收录接口。需要站点管理员配置站点专属的 API "
+"令牌。除非模块已启用并提供了令牌，否则不会发送任何数据。"
+
+#. Found in description paragraph.
+msgid ""
+"Connects to your own SMTP server to send emails. SMTP host, port, "
+"credentials, and encryption are fully configured by the site admin. The "
+"plugin does not collect or send any data to third parties; all email is "
+"routed through the admin's own mail server."
+msgstr ""
+"连接你自己的 SMTP 服务器来发送邮件。SMTP "
+"主机、端口、凭据和加密方式均由站点管理员完全配置。本插件不会向第三方收集或发送任何数据；所有邮件均通过管理员自己的邮件服务器转发。"
+
+#. Found in description paragraph.
+msgid ""
+"Kimi / Moonshot AI - https://api.moonshot.cn\n"
+"Terms of Service: https://kimi.moonshot.cn/user/agreement/modeluse\n"
+"Privacy Policy: https://kimi.moonshot.cn/user/agreement/userprivacy"
+msgstr ""
+"Kimi / Moonshot AI - https://api.moonshot.cn\n"
+"服务条款：https://kimi.moonshot.cn/user/agreement/modeluse\n"
+"隐私政策：https://kimi.moonshot.cn/user/agreement/userprivacy"
+
+#. Found in description paragraph.
+msgid ""
+"Anthropic (Claude) - https://api.anthropic.com\n"
+"Terms of Service: https://www.anthropic.com/legal/terms\n"
+"Privacy Policy: https://www.anthropic.com/legal/privacy"
+msgstr ""
+"Anthropic (Claude) - https://api.anthropic.com\n"
+"服务条款：https://www.anthropic.com/legal/terms\n"
+"隐私政策：https://www.anthropic.com/legal/privacy"
+
+#. Found in description paragraph.
+msgid ""
+"OpenAI - https://api.openai.com\n"
+"Terms of Service: https://openai.com/policies/terms-of-use\n"
+"Privacy Policy: https://openai.com/policies/privacy-policy"
+msgstr ""
+"OpenAI - https://api.openai.com\n"
+"服务条款：https://openai.com/policies/terms-of-use\n"
+"隐私政策：https://openai.com/policies/privacy-policy"
+
+#. Found in description paragraph.
+msgid ""
+"DeepSeek - https://api.deepseek.com\n"
+"Terms of Service: https://platform.deepseek.com/policies/terms\n"
+"Privacy Policy: https://platform.deepseek.com/policies/privacy"
+msgstr ""
+"DeepSeek - https://api.deepseek.com\n"
+"服务条款：https://platform.deepseek.com/policies/terms\n"
+"隐私政策：https://platform.deepseek.com/policies/privacy"
+
+#. Found in description paragraph.
+msgid "Supported providers:"
+msgstr "支持的提供商："
+
+#. Found in description paragraph.
+msgid ""
+"Sends post content (post title and body text) to your configured AI "
+"provider's API for tag and excerpt generation. Data is sent only when the "
+"admin clicks \"Generate\" or runs batch processing, and only if the module "
+"is enabled and an API key is provided."
+msgstr ""
+"将文章内容（标题和正文）发送到你配置的 AI 服务商 "
+"API，用于生成标签和摘要。数据仅在管理员点击「生成」或运行批量处理时发送，且仅在模块已启用并提供了 API 密钥的情况下发送。"
+
+#. Found in description paragraph.
+msgid ""
+"This plugin optionally connects to third-party services when the "
+"corresponding modules are enabled. All connections are initiated by the site"
+" admin and require explicitly configured credentials."
+msgstr "当相应模块启用时，本插件可选择性地连接到第三方服务。所有连接均由站点管理员发起，并需要显式配置的凭据。"
+
+#. Found in description paragraph.
+msgid "Security features:"
+msgstr "安全特性："
+
+#. Found in description paragraph.
+msgid "Modules included:"
+msgstr "包含以下模块："
+
+#. Found in description paragraph.
+msgid ""
+"Dreamanual Toolkit gathers small single-purpose WordPress features - back-"
+"to-top button, maintenance mode, featured image tools, SMTP mail, content "
+"visibility, AI tag generation and more - into standalone modules under one "
+"plugin. Each module can be enabled or disabled independently; disabled "
+"modules load no code and register no hooks, so there is zero overhead."
+msgstr ""
+"Dreamanual Toolkit 将一系列单一用途的 WordPress 小功能——返回顶部按钮、维护模式、特色图片工具、SMTP "
+"邮件、内容可见性、AI 标签生成等——整合到一个插件下的独立模块中。每个模块可独立启用或禁用；被禁用的模块不加载任何代码、不注册任何钩子，因此零开销。"
+
+#. Found in description list item.
+msgid "Front-end uses Vanilla JS with CSS BEM naming"
+msgstr "前端使用原生 JS，并采用 CSS BEM 命名规范"
+
+#. Found in description list item.
+msgid ""
+"Every AJAX endpoint uses check_ajax_referer + current_user_can double "
+"verification"
+msgstr "每个 AJAX 接口均使用 check_ajax_referer + current_user_can 双重校验"
+
+#. Found in description list item.
+msgid ""
+"API keys and SMTP passwords are AES-256-CBC encrypted with a key derived "
+"from AUTH_KEY + SECURE_AUTH_KEY"
+msgstr "API 密钥与 SMTP 密码使用由 AUTH_KEY + SECURE_AUTH_KEY 派生的密钥进行 AES-256-CBC 加密"
+
+#. Found in description list item.
+msgid ""
+"Search Push - auto-submits post links to Baidu and Bing on publish/update"
+msgstr "搜索推送——发布/更新时自动将文章链接提交给百度和必应"
+
+#. Found in description list item.
+msgid "Role Manager - fine-grained WordPress role and capability editing"
+msgstr "角色管理器——精细化的 WordPress 角色与权限编辑"
+
+#. Found in description list item.
+msgid ""
+"Content Visibility - per-category content visibility with per-channel hiding"
+" and role bypass"
+msgstr "内容可见性——按分类控制内容可见性，支持按频道隐藏和角色豁免"
+
+#. Found in description list item.
+msgid ""
+"AI Optimizer - AI-powered tag generation with batch processing and multiple "
+"AI model support"
+msgstr "AI 优化器——基于 AI 的标签生成，支持批量处理和多种 AI 模型"
+
+#. Found in description header.
+msgid "Search Push"
+msgstr "搜索推送"
+
+#. Found in description header.
+msgid "SMTP Mail (Site Enhance)"
+msgstr "SMTP 邮件（站点增强）"
+
+#. Found in description header.
+msgid "AI Optimizer"
+msgstr "AI 优化器"
+
+#. Found in description header.
+msgid "External Services"
+msgstr "外部服务说明"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Refreshed translation template: 21 missing strings added to .pot and "
+"zh_CN.po"
+msgstr "更新翻译模板：向 .pot 与 zh_CN.po 新增了 21 条缺失字符串"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed Plugin Check warnings for SMTP password and dynamic field sanitization"
+" in Site Enhance"
+msgstr "修复 Plugin Check 对 Site Enhance 中 SMTP 密码与动态字段清理的告警"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed AI Optimizer save settings error response format (prevented [object "
+"Object] display)"
+msgstr "修复 AI 优化器保存设置时错误响应格式（避免显示 [object Object]）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed missing drea-toggle__input class on Site Optimize settings page "
+"checkboxes"
+msgstr "修复站点优化设置页复选框中缺失的 drea-toggle__input 类"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Site Enhance: added Comment Avatar optimization (Gravatar mirror, custom "
+"default avatar)"
+msgstr "站点增强：新增「评论头像」优化（Gravatar 镜像、自定义默认头像）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Site Optimize: added Admin Ad Blocker group with editable CSS selector rules"
+msgstr "站点优化：新增「后台广告拦截」分组，支持可编辑的 CSS 选择器规则"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Site Optimize: added Chinese Typography group (auto-spacing, text justify, "
+"smart quotes, paragraph indent)"
+msgstr "站点优化：新增「中文排版」分组（自动间距、两端对齐、智能引号、段落缩进）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Plugin defaults to English; Chinese users receive translations via GlotPress"
+" or .po file"
+msgstr "插件默认英文；中文用户可通过 GlotPress 或 .po 文件获得翻译"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Translated JavaScript hardcoded strings and error log messages"
+msgstr "翻译了 JavaScript 中硬编码的字符串与错误日志信息"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Refreshed .pot translation template (369 unique entries)"
+msgstr "刷新 .pot 翻译模板（369 条唯一条目）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Added zh_CN.po translation file (364 translated entries)"
+msgstr "新增 zh_CN.po 翻译文件（364 条已翻译条目）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Full internationalization: all user-facing PHP strings converted to English "
+"source"
+msgstr "全面国际化：所有面向用户的 PHP 字符串已转换为英文源文案"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Initial release with 6 modules"
+msgstr "首个版本，包含 6 个模块"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Minor asset and styling refinements"
+msgstr "细微的资源与样式优化"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Plugin Check compliance fixes across all modules"
+msgstr "跨全部模块修复 Plugin Check 合规问题"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Site Enhance: SMTP password sanitization hardening"
+msgstr "站点增强：强化 SMTP 密码清理"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Prepared for WordPress.org: .pot template, external service declarations, "
+"English description"
+msgstr "为 WordPress.org 做准备：.pot 模板、外部服务声明、英文描述"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "All settings pages: save button disabled until form is modified"
+msgstr "所有设置页：表单未修改前禁用保存按钮"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Back-to-top button: SVG arrow icon, icon color customization with live "
+"preview"
+msgstr "返回顶部按钮：SVG 箭头图标、支持实时预览的图标颜色自定义"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Removed unnecessary load_plugin_textdomain() call"
+msgstr "移除多余的 load_plugin_textdomain() 调用"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Added Terms of Service and Privacy Policy links for all external services"
+msgstr "为所有外部服务新增服务条款与隐私政策链接"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Replaced inline styles/scripts with proper wp_enqueue calls"
+msgstr "用规范的 wp_enqueue 调用取代内联样式/脚本"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Fixed update_option return value check in AI Optimizer module"
+msgstr "修复 AI 优化器模块中 update_option 返回值检查"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Fixed invalid Terms of Service and Privacy Policy URLs in readme"
+msgstr "修复 readme 中无效的服务条款与隐私政策链接"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Security: fixed IDOR vulnerability in AI Optimizer (missing post-level "
+"capability check)"
+msgstr "安全：修复 AI 优化器中的 IDOR 漏洞（缺少文章级权限检查）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Security: fixed administrator lockout in Role Manager (protected roles can "
+"no longer strip manage_options)"
+msgstr "安全：修复角色管理器中管理员被锁定的问题（受保护角色不能再移除 manage_options 权限）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Security: API key no longer exposed to frontend in batch processing"
+msgstr "安全：批量处理中 API 密钥不再暴露给前端"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed: Kimi model list updated to "
+"kimi-k2.6/k2.7-code/k2.7-code-highspeed/k3 (moonshot-v1 series deprecated)"
+msgstr ""
+"修复：Kimi 模型列表更新为 kimi-k2.6/k2.7-code/k2.7-code-highspeed/k3（moonshot-v1"
+" 系列已弃用）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed: Maintenance mode hardcoded lang attribute now uses "
+"get_bloginfo('language')"
+msgstr "修复：维护模式硬编码的 lang 属性改用 get_bloginfo('language')"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed: Chinese typography now filters the_content/the_excerpt instead of "
+"full-page output buffer"
+msgstr "修复：中文排版改用 the_content/the_excerpt 过滤，替代全页输出缓冲"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Fixed: module deactivate now properly unregisters hooks (prevents zombie "
+"state on re-activate)"
+msgstr "修复：模块停用时正确注销钩子（防止重新启用时出现僵尸状态）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Added: independent Crypto class with Error_Translator for shared network "
+"error translation"
+msgstr "新增：独立 Crypto 类配合 Error_Translator 实现共享网络错误翻译"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Added: support for custom post types in AI Optimizer batch processing"
+msgstr "新增：AI 优化器批量处理支持自定义文章类型"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Improved: asset versioning with filemtime fallback to plugin version"
+msgstr "改进：静态资源版本号使用 filemtime，回退到插件版本"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Improved: role user count uses count_users() instead of per-role queries"
+msgstr "改进：角色用户数改用 count_users() 替代逐角色查询"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Improved: Baidu push URL upgraded to HTTPS"
+msgstr "改进：百度推送 URL 升级为 HTTPS"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid ""
+"Improved: Site Optimize on_activate simplified (defaults via get_option "
+"fallback)"
+msgstr "改进：Site Optimize on_activate 简化（通过 get_option 回退默认值）"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Fixed: PHP 8.3 fatal error on activation - Module_Base::remove() callable type hint relaxed to accept string function names"
+msgstr "修复：PHP 8.3 环境启用插件时的致命错误——放宽 Module_Base::remove() 的 callable 类型声明，改为接受字符串形式的函数名"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "Fixed: AI Optimizer meta box no longer forces a page reload after applying changes (reload was blocked by the editor beforeunload guard, leaving the Apply button stuck; also risked losing unsaved content). Applied tags/slug/excerpt are now merged into the block editor state instead."
+msgstr "修复：AI 优化器元框在应用更改后不再强制刷新页面（刷新会被编辑器的 beforeunload 拦截，导致「应用」按钮卡死，且存在丢失未保存内容的风险）。已应用的标签/别名/摘要现改为合并进区块编辑器状态。"
